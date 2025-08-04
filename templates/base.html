@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - {{ site_title }}</title>
+    <link rel="stylesheet" href="{{ base_url }}style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="{{ base_url }}">{{ author_name }}</a>
+            </div>
+            <div class="nav-menu">
+                <a href="{{ base_url }}index.html">Homepage</a>
+                <a href="{{ base_url }}publications.html">Publications</a>
+                <a href="{{ base_url }}projects.html">Projects</a>
+            </div>
+            <div class="theme-switcher">
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {{ year }} {{ author_name }}. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ base_url }}script.js"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

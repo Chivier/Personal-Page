@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<style>
+    .page-header {
+        background-color: var(--section-bg);
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .search-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .search-box {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background-color: var(--bg-color);
+        transition: border-color 0.3s;
+    }
+    
+    .search-box:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+    
+    .filter-tags {
+        margin-top: 2rem;
+        text-align: center;
+    }
+    
+    .filter-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.25rem;
+        background-color: var(--section-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 0.875rem;
+    }
+    
+    .filter-tag:hover,
+    .filter-tag.active {
+        background-color: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+    
+    .no-results {
+        text-align: center;
+        padding: 3rem;
+        color: var(--text-light);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="container">
+            <h1>Publications</h1>
+            <div class="search-container">
+                <input type="text" class="search-box" id="publication-search" placeholder="Search publications by title, author, or venue...">
+            </div>
+            <div class="filter-tags">
+                <span class="filter-tag active" data-year="all">All Years</span>
+                {{ year_filters }}
+            </div>
+        </div>
+    </div>
+
+    <section class="publications-section">
+        <div class="container">
+            <div class="publications-list" id="publications-list">
+                {{ publications_content }}
+            </div>
+            <div class="no-results" id="no-results" style="display: none;">
+                <p>No publications found matching your search criteria.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Search functionality
+    const searchBox = document.getElementById('publication-search');
+    const publicationsList = document.getElementById('publications-list');
+    const noResults = document.getElementById('no-results');
+    const publications = publicationsList.querySelectorAll('.publication-item');
+    const filterTags = document.querySelectorAll('.filter-tag');
+    
+    let activeYear = 'all';
+    
+    function filterPublications() {
+        const searchTerm = searchBox.value.toLowerCase();
+        let hasResults = false;
+        
+        publications.forEach(pub => {
+            const text = pub.textContent.toLowerCase();
+            const year = pub.dataset.year;
+            
+            const matchesSearch = searchTerm === '' || text.includes(searchTerm);
+            const matchesYear = activeYear === 'all' || year === activeYear;
+            
+            if (matchesSearch && matchesYear) {
+                pub.style.display = 'flex';
+                hasResults = true;
+            } else {
+                pub.style.display = 'none';
+            }
+        });
+        
+        noResults.style.display = hasResults ? 'none' : 'block';
+    }
+    
+    searchBox.addEventListener('input', filterPublications);
+    
+    filterTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            filterTags.forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            activeYear = tag.dataset.year;
+            filterPublications();
+        });
+    });
+</script>
+{% endblock %}

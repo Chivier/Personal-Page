@@ -1,0 +1,226 @@
+<div class="container-m margin-end-space">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kelpui@0/css/kelp.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/kelpui@0/js/kelp.js"></script>
+	<h1>Kelp Demo</h1>
+	<p>Kelp is a UI library for people who love HTML, powered by modern CSS and Web Components. Easily customized. No build step.</p>
+	<p>This demo highlights some of Kelp's key features.</p>
+	<p>
+		<a class="btn secondary size-l" href="https://kelpui.com">Read the Docs &rarr;</a>
+	</p>
+
+	<kelp-toc class="stack margin-end-space" heading="In this demo..." hide-until-ready></kelp-toc>
+
+	<h2>Classless Base HTML</h2>
+	<p>You can use any valid HTML element without any classes, and it will all be styled as part of a cohesive design system.</p>
+
+
+	<h3>Forms</h3>
+	<div class="stack margin-end-space">
+		<div class="grid-m">
+			<div class="item-half">
+				<label for="username">Name</label>
+				<input type="text" id="#username">
+			</div>
+			<div class="item-half">
+				<label for="reservation_date">Reservation Date</label>
+				<div class="flex"><input type="date" id="reservation_date"></div>
+			</div>
+		</div>
+		<fieldset>
+			<legend>Preferred Seating</legend>
+			<div class="cluster">
+				<div>
+					<label>
+						<input type="radio" name="preferred" value="indoors" checked>
+						Indoors
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="radio" name="preferred" value="outdoors">
+						Outdoors
+					</label>
+				</div>
+			</div>
+		</fieldset>
+		<div>
+			<button>Book Reservation</button>
+		</div>
+	</div>
+
+	<h3>Lists</h3>
+
+	<div class="grid-m margin-end-space">
+		<div class="item-half">
+			<strong>Ordered</strong>
+			<ol>
+				<li>Merlin</li>
+				<li>Radagast</li>
+				<li>Gandalf</li>
+			</ol>
+		</div>
+		<div class="item-half">
+			<strong>Unordered</strong>
+			<ul class="item-half">
+				<li>Whale</li>
+				<li>Shark</li>
+				<li>Dolphin</li>
+			</ul>
+		</div>
+	</div>
+
+	<h3>Quotes</h3>
+
+	<blockquote>
+		Someone once said something so important, it was deemed worthy of repeating here in the form of a blockquote. This is that blockquote.
+		<cite>- Someone Important</cite>
+	</blockquote>
+
+	<h3>Tables</h3>
+
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">First Name</th>
+				<th scope="col">Last Name</th>
+				<th scope="col">Super Hero</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Peter</td>
+				<td>Parker</td>
+				<td>Spiderman</td>
+			</tr>
+			<tr>
+				<td>Bruce</td>
+				<td>Wayne</td>
+				<td>Batman</td>
+			</tr>
+			<tr>
+				<td>Clark</td>
+				<td>Kent</td>
+				<td>Superman</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h3>Details &amp; Summary</h3>
+
+	<details>
+		<summary><strong>Merlin</strong></summary>
+		The wizard...
+	</details>
+	<details>
+		<summary><strong>Gandalf</strong></summary>
+		The gray...
+	</details>
+	<details>
+		<summary><strong>Radagast</strong></summary>
+		The dude who talks to animals...
+	</details>
+
+
+	<h2>Utility Classes</h2>
+
+	<p>Nudge and tweak elements with semantic, human-readable utility classes.</p>
+
+	<h3>Colors</h3>
+	<p>Change colors with easy-to-understand classes.</p>
+	<div class="cluster margin-end-space">
+		<button>Neutral</button>
+		<button class="primary">Primary</button>
+		<button class="secondary">Secondary</button>
+		<button class="success">Success</button>
+		<button class="danger">Danger</button>
+		<button class="warning">Warning</button>
+	</div>
+
+	<h3>Styles</h3>
+	<p>Prefer a muted color or an outline? Want text that's a bit bigger or smaller? Kelp can do that!</p>
+	<div class="cluster align-end margin-end-space">
+		<button class="primary muted">Muted</button>
+		<button class="primary outline">Outline</button>
+		<button class="primary size-l">Large</button>
+		<button class="primary size-xs">Small</button>
+	</div>
+
+
+	<h2>Layouts &amp; Patterns</h2>
+	<p>Kelp provides helpful classes for creating modern layouts and UI patterns with ease.</p>
+
+	<h3>Grid</h3>
+	<p>A simple fraction-based grid layout.</p>
+	<div class="stack margin-end-space">
+		<div class="grid">
+			<div class="item-third callout">.item-third</div>
+			<div class="item-two-thirds callout">.item-two-thirds</div>
+		</div>
+
+		<div class="grid">
+			<div class="item-fourth callout">.item-fourth</div>
+			<div class="item-three-fourths callout">.item-three-fourths</div>
+		</div>
+
+		<div class="grid">
+			<div class="item-half callout">.item-half</div>
+			<div class="item-half callout">.item-half</div>
+		</div>
+
+		<div class="grid">
+			<div class="item-fourth callout">.item-fourth</div>
+			<div class="item-half callout">.item-half</div>
+			<div class="item-fourth callout">.item-fourth</div>
+		</div>
+	</div>
+
+	<h3>Split</h3>
+	<div class="split margin-end-space">
+		<div class="callout" style="width: 100px; height: 50px;"></div>
+		<div class="callout" style="width: 100px; height: 50px;"></div>
+	</div>
+
+	<h3>Callouts</h3>
+	<div class="stack margin-end-space">
+		<div class="callout">
+			This is a callout.
+		</div>
+		<div class="callout secondary">
+			They can be different colors.
+		</div>
+		<div class="callout danger vivid">
+			You can even use them as alerts and notifications.
+		</div>
+	</div>
+
+	<h3>Badges</h3>
+	<div class="cluster margin-end-space">
+		<span class="badge">Neutral</span>
+		<span class="badge primary">Primary</span>
+		<span class="badge secondary">Secondary</span>
+		<span class="badge success">Success</span>
+		<span class="badge danger">Danger</span>
+		<span class="badge warning">Warning</span>
+	</div>
+
+	<h3>Skeletons</h3>
+
+	<div class="sidecar margin-end-space">
+		<div>
+			<div class="skeleton" style="--height: 8em; --width: 8em; --border-radius: 50%;"></div>
+		</div>
+		<div class="stack">
+			<div class="skeleton" style="--width: 8em;"></div>
+			<div class="skeleton"></div>
+			<div class="skeleton" style="--width: 12em;"></div>
+			<div class="skeleton" style="--height: 2em; --width: 6em;"></div>
+		</div>
+	</div>
+
+
+	<h2>Web Components</h2>
+	<p>Add interactivity and progressively enhance your UI with HTML web components.</p>
+
+	<p><em>Coming soon...</em></p>
+
+</div>

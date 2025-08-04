@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <article class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>{{ project_title }}</h1>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        {{ project_tags }}
+                    </div>
+                    {% if external_link %}
+                    <a href="{{ external_link }}" class="external-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            
+            {% if featured_image %}
+            <div class="project-featured-image">
+                <img src="{{ featured_image }}" alt="{{ project_title }}">
+            </div>
+            {% endif %}
+            
+            <div class="project-content">
+                {{ project_content }}
+            </div>
+            
+            {% if project_images %}
+            <div class="project-gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    {{ project_images }}
+                </div>
+            </div>
+            {% endif %}
+            
+            <div class="project-navigation">
+                <a href="../projects.html" class="btn-back">← Back to Projects</a>
+            </div>
+        </div>
+    </article>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+    .project-detail {
+        padding: 3rem 0;
+    }
+    
+    .project-header {
+        margin-bottom: 2rem;
+    }
+    
+    .project-header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .project-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    
+    .project-tags {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .project-tags span {
+        padding: 0.25rem 0.75rem;
+        background-color: var(--section-bg);
+        border-radius: 15px;
+        font-size: 0.875rem;
+    }
+    
+    .external-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .project-featured-image {
+        margin-bottom: 3rem;
+    }
+    
+    .project-featured-image img {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+    
+    .project-content {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+    }
+    
+    .project-content h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .project-content p {
+        margin-bottom: 1rem;
+    }
+    
+    .project-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 8px;
+    }
+    
+    .project-gallery {
+        margin-bottom: 3rem;
+    }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .gallery-grid img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+    
+    .project-navigation {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .btn-back {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+</style>
+{% endblock %}
