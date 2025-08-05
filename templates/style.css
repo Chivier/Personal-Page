@@ -609,21 +609,3 @@ footer {
     border-color: var(--primary-color);
 }
 
-.search-box {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.search-box input:focus {
-    border-color: var(--primary-color);
-}
