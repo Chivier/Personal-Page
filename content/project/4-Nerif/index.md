@@ -6,7 +6,8 @@ tags:
 date: "2024-04-27T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
-external_link: https://github.com/Chivier/Nerif
+github_link: https://github.com/Chivier/Nerif
+external_link: http://nerif-ai.com
 
 image:
   caption: Autoreader

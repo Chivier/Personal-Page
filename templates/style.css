@@ -9,6 +9,7 @@
     --primary-color: #48766c;
     --primary-dark: #365a54;
     --primary-light: #5a8a7f;
+    --primary-hover: #5a8a7f;
     --secondary-color: #64748b;
     --text-color: #333333;
     --text-light: #666666;
@@ -466,16 +467,77 @@ h3 {
 }
 
 .project-tags {
-    color: var(--text-light);
-    font-size: 0.875rem;
     margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--section-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.project-tag:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .project-link {
-    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--section-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.project-link.github-link {
+    background-color: #24292e;
+    color: white;
+    border-color: #24292e;
+}
+
+.project-link.github-link:hover {
+    background-color: #1a1e22;
+    border-color: #1a1e22;
+}
+
+.project-link.external-link {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.project-link.external-link:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
 }
 
 /* Contact Section */

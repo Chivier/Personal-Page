@@ -257,18 +257,27 @@ class PersonalHomepageGenerator:
         tags = proj.get('tags', [])
         tags_str = ', '.join(tags)
         
-        # Check if project has external link
+        # Generate individual tag spans with styling
+        tags_html = ' '.join([f'<span class="project-tag">{tag}</span>' for tag in tags])
+        
+        # Build link buttons
+        links_html = '<div class="project-links">'
+        
+        # Check for GitHub link
+        github_link = proj.get('github_link', '')
+        if github_link:
+            links_html += f'<a href="{github_link}" class="project-link github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>'
+        
+        # Check for external link
         external_link = proj.get('external_link', '')
         if external_link:
-            # Link directly to external URL
-            link = external_link
-            link_target = ' target="_blank"'
-            link_text = 'View Project →'
-        else:
-            # Link to project detail page
+            links_html += f'<a href="{external_link}" class="project-link external-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>'
+        elif not github_link:
+            # If no external or github link, show detail page link
             link = f"{base_url}projects/{proj['slug']}.html"
-            link_target = ''
-            link_text = 'View Details →'
+            links_html += f'<a href="{link}" class="project-link">View Details →</a>'
+        
+        links_html += '</div>'
         
         # Convert summary markdown to HTML
         summary = proj.get('summary', '')
@@ -280,8 +289,8 @@ class PersonalHomepageGenerator:
             <div class="project-content">
                 <h3>{proj.get('title', '')}</h3>
                 <p>{summary_html}</p>
-                <div class="project-tags">{tags_str}</div>
-                <a href="{link}" class="project-link"{link_target}>{link_text}</a>
+                <div class="project-tags">{tags_html}</div>
+                {links_html}
             </div>
         </div>
         '''

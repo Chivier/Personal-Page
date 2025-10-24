@@ -7,6 +7,7 @@ tags:
 date: "2023-08-28T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
+github_link: https://github.com/Chivier/DeepReader
 external_link: https://reader.ed-aisys.com
 
 image:
@@ -15,8 +16,6 @@ image:
 ---
 
 # DeepReader
-
-github link: https://github.com/Chivier/DeepReader
 
 A sophisticated AI-powered system for generating high-quality book reviews and facilitating in-depth literary discussions.
 
