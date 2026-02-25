@@ -7,7 +7,7 @@
             <div class="hero-content">
                 <div class="hero-wrapper">
                     <div class="hero-left">
-                        <img src="avatar.jpg" alt="{{ author_name }}" class="profile-image">
+                        <img src="{{ base_url }}avatar.jpg" alt="{{ author_name }}" class="profile-image">
                         <h1>{{ author_name }}</h1>
                         <p class="hero-subtitle">{{ name_pronunciation }}</p>
                         <p class="hero-role">{{ role }}</p>
@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="hero-right">
-                        <h2>Biography</h2>
+                        <h2>{{ t.hero.biography }}</h2>
                         <div class="bio-content">{{ bio_content }}</div>
                     </div>
                 </div>
@@ -30,20 +30,20 @@
         <div class="container">
             <div class="about-content">
                 <div class="skills-section">
-                    <h3 class="skills-title">Skills</h3>
+                    <h3 class="skills-title">{{ t.about.skills }}</h3>
                     <div class="skills-grid">
                         {{ skills_content }}
                     </div>
                 </div>
                 <div class="info-grid">
                     <div class="interests-section">
-                        <h3>Interests</h3>
+                        <h3>{{ t.about.interests }}</h3>
                         <ul class="interests-list">
                             {{ interests_content }}
                         </ul>
                     </div>
                     <div class="education-section">
-                        <h3>Education</h3>
+                        <h3>{{ t.about.education }}</h3>
                         {{ education_content }}
                     </div>
                 </div>
@@ -54,12 +54,12 @@
     <!-- Publications Section -->
     <section id="publications" class="publications-section">
         <div class="container">
-            <h2>Recent Publications</h2>
+            <h2>{{ t.index.recent_publications }}</h2>
             <div class="publications-list">
                 {{ publications_preview }}
             </div>
             <div class="text-center">
-                <a href="publications.html" class="btn-view-all">View All Publications →</a>
+                <a href="{{ base_url }}publications.html" class="btn-view-all">{{ t.index.view_all_publications }}</a>
             </div>
         </div>
     </section>
@@ -67,12 +67,12 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="container">
-            <h2>Projects</h2>
+            <h2>{{ t.index.projects }}</h2>
             <div class="projects-grid">
                 {{ projects_preview }}
             </div>
             <div class="text-center">
-                <a href="projects.html" class="btn-view-all">View All Projects →</a>
+                <a href="{{ base_url }}projects.html" class="btn-view-all">{{ t.index.view_all_projects }}</a>
             </div>
         </div>
     </section>
@@ -80,7 +80,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Contact</h2>
+            <h2>{{ t.index.contact }}</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     {{ contact_content }}

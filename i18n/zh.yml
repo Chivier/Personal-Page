@@ -1,0 +1,52 @@
+# Chinese UI translations
+nav:
+  home: "主页"
+  publications: "论文发表"
+  projects: "项目"
+
+hero:
+  biography: "个人简介"
+
+about:
+  skills: "技能"
+  interests: "研究兴趣"
+  education: "教育经历"
+
+index:
+  recent_publications: "近期论文"
+  view_all_publications: "查看所有论文 →"
+  projects: "项目"
+  view_all_projects: "查看所有项目 →"
+  contact: "联系方式"
+
+publications:
+  title: "论文发表"
+  search_placeholder: "按标题、作者或会议搜索论文..."
+  all_years: "全部年份"
+  no_results: "没有找到匹配的论文。"
+
+projects:
+  title: "项目"
+  search_placeholder: "按标题、描述或标签搜索项目..."
+  all: "全部"
+  no_results: "没有找到匹配的项目。"
+
+project_detail:
+  view_project: "查看项目"
+  gallery: "图集"
+  back_to_projects: "← 返回项目列表"
+  view_details: "查看详情 →"
+
+contact:
+  schedule_text: "如果想和我讨论，请使用这个工具："
+  schedule_link: "预约会议"
+
+site:
+  title: "个人主页"
+  rights: "保留所有权利。"
+
+lang:
+  code: "zh"
+  name: "中文"
+  switch_to: "EN"
+  switch_url_prefix: ""

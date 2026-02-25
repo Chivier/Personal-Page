@@ -1,0 +1,52 @@
+# English UI translations
+nav:
+  home: "Homepage"
+  publications: "Publications"
+  projects: "Projects"
+
+hero:
+  biography: "Biography"
+
+about:
+  skills: "Skills"
+  interests: "Interests"
+  education: "Education"
+
+index:
+  recent_publications: "Recent Publications"
+  view_all_publications: "View All Publications →"
+  projects: "Projects"
+  view_all_projects: "View All Projects →"
+  contact: "Contact"
+
+publications:
+  title: "Publications"
+  search_placeholder: "Search publications by title, author, or venue..."
+  all_years: "All Years"
+  no_results: "No publications found matching your search criteria."
+
+projects:
+  title: "Projects"
+  search_placeholder: "Search projects by title, description, or tags..."
+  all: "All"
+  no_results: "No projects found matching your search criteria."
+
+project_detail:
+  view_project: "View Project"
+  gallery: "Gallery"
+  back_to_projects: "← Back to Projects"
+  view_details: "View Details →"
+
+contact:
+  schedule_text: "If you wanna discuss with me, use this tool:"
+  schedule_link: "Schedule a meeting"
+
+site:
+  title: "Personal Homepage"
+  rights: "All rights reserved."
+
+lang:
+  code: "en"
+  name: "English"
+  switch_to: "中文"
+  switch_url_prefix: "zh/"

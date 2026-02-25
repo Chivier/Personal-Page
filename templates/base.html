@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ t.lang.code }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - {{ site_title }}</title>
+    <title>{{ title }} - {{ t.site.title }}</title>
     <link rel="stylesheet" href="{{ base_url }}style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
@@ -16,12 +16,13 @@
                 <a href="{{ base_url }}">{{ author_name }}</a>
             </div>
             <div class="nav-menu">
-                <a href="{{ base_url }}index.html">Homepage</a>
-                <a href="{{ base_url }}publications.html">Publications</a>
-                <a href="{{ base_url }}projects.html">Projects</a>
+                <a href="{{ base_url }}index.html">{{ t.nav.home }}</a>
+                <a href="{{ base_url }}publications.html">{{ t.nav.publications }}</a>
+                <a href="{{ base_url }}projects.html">{{ t.nav.projects }}</a>
             </div>
-            <div class="theme-switcher">
-                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            <div class="nav-right">
+                <a href="{{ lang_switch_url }}" class="lang-switch" title="{{ t.lang.switch_to }}">{{ t.lang.switch_to }}</a>
+                <button id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
             </div>
         </div>
     </nav>
@@ -32,7 +33,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; {{ year }} {{ author_name }}. All rights reserved.</p>
+            <p>&copy; {{ year }} {{ author_name }}. {{ t.site.rights }}</p>
         </div>
     </footer>
 
