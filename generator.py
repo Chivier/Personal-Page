@@ -351,8 +351,35 @@ class PersonalHomepageGenerator:
         </div>
         '''
 
+    def generate_schedule_html(self, t: dict = None, variant: str = 'hero') -> str:
+        """Generate schedule/booking HTML.
+
+        variant:
+          - hero: compact button-style for top of page
+          - contact: inline text for contact section
+        """
+        schedule_text = 'If you wanna discuss with me, use this tool:'
+        schedule_link_text = 'Schedule a meeting'
+        if t:
+            schedule_text = t.get('contact', {}).get('schedule_text', schedule_text)
+            schedule_link_text = t.get('contact', {}).get('schedule_link', schedule_link_text)
+
+        url = "https://cal.com/yeqi-huang/discussion?duration=30"
+
+        if variant == 'contact':
+            return (
+                f'''<p class="schedule-link"><i class="fas fa-calendar-alt"></i> {schedule_text} '''
+                f'''<a href="{url}" target="_blank">{schedule_link_text}</a></p>'''
+            )
+
+        # hero
+        return (
+            f'''<a class="schedule-btn" href="{url}" target="_blank">'''
+            f'''<i class="fas fa-calendar-alt"></i> {schedule_link_text}</a>'''
+        )
+
     def generate_contact_html(self, t: dict = None) -> str:
-        """Generate contact section HTML"""
+        """Generate contact section HTML (email/address only; scheduling is shown earlier)."""
         # Extract contact info from config
         contact_info = {}
         for section in self.config.get('sections', []):
@@ -370,16 +397,6 @@ class PersonalHomepageGenerator:
 
         if contact_info.get('directions'):
             html += f'<p><i class="fas fa-door-open"></i> {contact_info.get("directions", "")}</p>'
-
-        # Get translated text
-        schedule_text = 'If you wanna discuss with me, use this tool:'
-        schedule_link_text = 'Schedule a meeting'
-        if t:
-            schedule_text = t.get('contact', {}).get('schedule_text', schedule_text)
-            schedule_link_text = t.get('contact', {}).get('schedule_link', schedule_link_text)
-
-        html += f'''<p class="schedule-link"><i class="fas fa-calendar-alt"></i> {schedule_text}
-                   <a href="https://cal.com/yeqi-huang/discussion?duration=30" target="_blank">{schedule_link_text}</a></p>'''
 
         return html
 
@@ -425,6 +442,7 @@ class PersonalHomepageGenerator:
             'org_name': self.author_data.get('organizations', [{}])[0].get('name', ''),
             'org_url': self.author_data.get('organizations', [{}])[0].get('url', '#'),
             'social_links': self.generate_social_links(base_url),
+            'schedule_html': self.generate_schedule_html(t, variant='hero'),
             'bio_content': bio_html,
 
             # About section

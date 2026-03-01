@@ -595,6 +595,31 @@ h3 {
     text-decoration: underline;
 }
 
+/* Schedule button (top/hero) */
+.schedule-hero {
+    margin-top: 1rem;
+}
+
+.schedule-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s, opacity 0.2s;
+}
+
+.schedule-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    opacity: 1;
+    text-decoration: none;
+}
+
 /* Buttons */
 .btn-view-all {
     display: inline-block;
