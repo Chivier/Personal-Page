@@ -109,9 +109,6 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/Chivier
-  - icon: google-scholar
-    icon_pack: ai
-    link: https://scholar.google.com/citations?user=ttEj8oIAAAAJ&hl=en
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/yeqi-huang-5ba40a207/
