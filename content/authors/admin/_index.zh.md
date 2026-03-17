@@ -103,6 +103,9 @@ social:
     label: 在 Twitter 上关注我
     display:
       header: true
+  - icon: google-scholar
+    icon_pack: ai
+    link: https://scholar.google.com/citations?user=ttEj8oIAAAAJ
   - icon: github
     icon_pack: fab
     link: https://github.com/Chivier

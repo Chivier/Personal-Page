@@ -21,17 +21,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
         
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          
+
+      - name: Install TeX Live (xelatex)
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: CV-Overleaf
+          root_file: main.tex
+          latexmk_use_xelatex: true
+        continue-on-error: true
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          
+
       - name: Build site
         run: python generator.py
         

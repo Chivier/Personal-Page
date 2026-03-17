@@ -9,6 +9,7 @@ import os
 import json
 import yaml
 import markdown
+import subprocess
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any
@@ -176,19 +177,17 @@ class PersonalHomepageGenerator:
             if link.startswith('/') or link.startswith('#'):
                 link = base_url + link.lstrip('/')
 
-            if icon == 'envelope':
-                social_links.append(f'<a href="{link}" aria-label="Email"><i class="{icon_pack} fa-{icon}"></i></a>')
-            elif icon == 'twitter':
-                social_links.append(f'<a href="{link}" aria-label="Twitter"><i class="{icon_pack} fa-{icon}"></i></a>')
-            elif icon == 'github':
-                social_links.append(f'<a href="{link}" aria-label="GitHub"><i class="{icon_pack} fa-{icon}"></i></a>')
-            elif icon == 'linkedin':
-                social_links.append(f'<a href="{link}" aria-label="LinkedIn"><i class="{icon_pack} fa-{icon}"></i></a>')
-            elif icon == 'cv':
-                # Adjust uploads path for subdirectory
-                if not link.startswith('http'):
+            if icon_pack == 'ai':
+                # Academicons (google-scholar, cv, etc.)
+                if icon == 'cv' and not link.startswith('http'):
                     link = base_url + link
-                social_links.append(f'<a href="{link}" aria-label="CV"><i class="ai ai-cv"></i></a>')
+                label = icon.replace('-', ' ').title()
+                social_links.append(f'<a href="{link}" aria-label="{label}"><i class="ai ai-{icon}"></i></a>')
+            elif icon == 'envelope':
+                social_links.append(f'<a href="{link}" aria-label="Email"><i class="{icon_pack} fa-{icon}"></i></a>')
+            else:
+                label = icon.replace('-', ' ').title()
+                social_links.append(f'<a href="{link}" aria-label="{label}"><i class="{icon_pack} fa-{icon}"></i></a>')
 
         return '\n'.join(social_links)
 
@@ -671,12 +670,57 @@ class PersonalHomepageGenerator:
             self.copy_static_files(output_dir)
             self.copy_assets(output_dir)
 
+    def compile_cv(self) -> subprocess.Popen | None:
+        """Start xelatex compilation of CV in the background. Returns the process handle."""
+        cv_dir = Path("CV-Overleaf")
+        tex_file = cv_dir / "main.tex"
+        if not tex_file.exists():
+            print("No CV-Overleaf/main.tex found, skipping CV compilation.")
+            return None
+
+        print("Starting CV compilation (xelatex)...")
+        try:
+            proc = subprocess.Popen(
+                ["xelatex", "-interaction=nonstopmode", "-halt-on-error", "main.tex"],
+                cwd=cv_dir,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+            )
+            return proc
+        except FileNotFoundError:
+            print("Warning: xelatex not found, skipping CV compilation.")
+            return None
+
+    def collect_cv(self, proc: subprocess.Popen | None):
+        """Wait for CV compilation to finish and copy the PDF to dist/uploads/."""
+        if proc is not None:
+            stdout, _ = proc.communicate()
+            if proc.returncode != 0:
+                print("Warning: xelatex compilation failed:")
+                print(stdout.decode(errors="replace")[-2000:])
+            else:
+                print("CV compilation succeeded.")
+
+        # Copy PDF if it exists (either freshly compiled or pre-built by CI)
+        pdf_src = Path("CV-Overleaf") / "main.pdf"
+        if pdf_src.exists():
+            for out_dir in [self.output_dir, self.output_dir / "zh"]:
+                uploads_dir = out_dir / "uploads"
+                uploads_dir.mkdir(parents=True, exist_ok=True)
+                shutil.copy(pdf_src, uploads_dir / "resume.pdf")
+            print("CV copied to dist/uploads/resume.pdf")
+        else:
+            print("Warning: No CV PDF found at CV-Overleaf/main.pdf")
+
     def generate(self):
         """Main generation process"""
         print("Starting homepage generation...")
 
         # Create output directory
         self.output_dir.mkdir(exist_ok=True)
+
+        # Start CV compilation early (runs in background)
+        cv_proc = self.compile_cv()
 
         # Load translations
         print("Loading translations...")
@@ -698,6 +742,9 @@ class PersonalHomepageGenerator:
 
         print("Copying assets...")
         self.copy_assets()
+
+        # Wait for CV compilation and copy result
+        self.collect_cv(cv_proc)
 
         print(f"Homepage generated successfully in {self.output_dir}/")
         print(f"  English: {self.output_dir}/index.html")
