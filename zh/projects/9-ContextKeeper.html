@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContextKeeper - 个人主页</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    
+<style>
+    .project-detail {
+        padding: 3rem 0;
+    }
+
+    .project-header {
+        margin-bottom: 2rem;
+    }
+
+    .project-header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .project-tags {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .project-tags span {
+        padding: 0.25rem 0.75rem;
+        background-color: var(--section-bg);
+        border-radius: 15px;
+        font-size: 0.875rem;
+    }
+
+    .external-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .project-featured-image {
+        margin-bottom: 3rem;
+    }
+
+    .project-featured-image img {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .project-content {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+    }
+
+    .project-content h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-content p {
+        margin-bottom: 1rem;
+    }
+
+    .project-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 8px;
+    }
+
+    .project-gallery {
+        margin-bottom: 3rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .project-navigation {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .btn-back {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../../">Yeqi Huang</a>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html">主页</a>
+                <a href="../../publications.html">论文发表</a>
+                <a href="../../projects.html">项目</a>
+            </div>
+            <div class="nav-right">
+                <a href="../../projects/9-ContextKeeper.html" class="lang-switch" title="EN">EN</a>
+                <button id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+    <article class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>ContextKeeper</h1>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        <span>AI</span><span>Python</span><span>C++</span><span>Plugin System</span><span>Voice Assistant</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            <div class="project-featured-image">
+                <img src="../../project/9-ContextKeeper/featured.png" alt="ContextKeeper">
+            </div>
+            
+
+            <div class="project-content">
+                <h1 id="contextkeeper">ContextKeeper</h1>
+<p>A community-driven fork of NVIDIA's G-Assist project, expanding the plugin ecosystem for AI-powered PC management.</p>
+<h2 id="overview">Overview</h2>
+<p>ContextKeeper enables RTX GPU users to manage PC settings and applications through voice or text commands, with a strong focus on extensibility and community contributions.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Voice &amp; Text Control</strong>: Natural language interaction for PC management</li>
+<li><strong>Extensible Plugin Architecture</strong>: Build custom functionality with Python or C++</li>
+<li><strong>Rich Plugin Ecosystem</strong>: Pre-built integrations for popular services</li>
+<li><strong>Python API Bindings</strong>: Easy integration and development</li>
+<li><strong>GPU-Accelerated</strong>: Leverages NVIDIA RTX capabilities</li>
+</ul>
+<h2 id="example-plugins">Example Plugins</h2>
+<ul>
+<li><strong>Twitch Integration</strong>: Stream management and chat interaction</li>
+<li><strong>Spotify Control</strong>: Music playback and playlist management</li>
+<li><strong>Peripheral Lighting</strong>: Logitech, Corsair, and Nanoleaf support</li>
+<li><strong>Custom Automations</strong>: Build your own integrations</li>
+</ul>
+<h2 id="technical-stack">Technical Stack</h2>
+<ul>
+<li><strong>Primary Language</strong>: Python (81.2%)</li>
+<li><strong>Performance Components</strong>: C++ (12.7%)</li>
+<li><strong>Plugin Invocation</strong>: Zero-shot function calling or direct specification</li>
+</ul>
+<h2 id="development">Development</h2>
+<p>The project emphasizes community contributions and provides comprehensive documentation for plugin development. Whether you're building simple automations or complex integrations, ContextKeeper provides the framework for extensible AI assistance.</p>
+<p>Perfect for power users and developers looking to create custom AI-powered workflows!</p>
+            </div>
+
+            
+
+            <div class="project-navigation">
+                <a href="../../projects.html" class="btn-back">← 返回项目列表</a>
+            </div>
+        </div>
+    </article>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Yeqi Huang. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    
+</body>
+</html>

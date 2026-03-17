@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论文发表 - 个人主页</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    
+<style>
+    .page-header {
+        background-color: var(--section-bg);
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .search-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .search-box {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background-color: var(--bg-color);
+        transition: border-color 0.3s;
+    }
+
+    .search-box:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .filter-tags {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .filter-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.25rem;
+        background-color: var(--section-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 0.875rem;
+    }
+
+    .filter-tag:hover,
+    .filter-tag.active {
+        background-color: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+
+    .no-results {
+        text-align: center;
+        padding: 3rem;
+        color: var(--text-light);
+    }
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../">Yeqi Huang</a>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html">主页</a>
+                <a href="../publications.html">论文发表</a>
+                <a href="../projects.html">项目</a>
+            </div>
+            <div class="nav-right">
+                <a href="../publications.html" class="lang-switch" title="EN">EN</a>
+                <button id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+    <div class="page-header">
+        <div class="container">
+            <h1>论文发表</h1>
+            <div class="search-container">
+                <input type="text" class="search-box" id="publication-search" placeholder="按标题、作者或会议搜索论文...">
+            </div>
+            <div class="filter-tags">
+                <span class="filter-tag active" data-year="all">全部年份</span>
+                <span class="filter-tag" data-year="2026">2026</span><span class="filter-tag" data-year="2025">2025</span><span class="filter-tag" data-year="2024">2024</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="publications-section">
+        <div class="container">
+            <div class="publications-list" id="publications-list">
+                
+        <div class="publication-item" data-year="2026">
+            <div class="pub-content">
+                <h4 class="pub-title">MICA: An Efficient Compiler for Mesh-Based AI Accelerators</h4>
+                <p class="pub-authors">Yeqi Huang, Congjie He, Haocheng Xiao, Yanwei Ye, Yi-Chieh Wang, Boyao Song, Ziming Miao, Lingxiao Ma, Fan Yang, Luo Mai</p>
+                <p class="pub-venue">Submitted to 18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 26) OSDI 2026 (Under Review)</p>
+                <div class="pub-links"></div>
+            </div>
+            <div class="pub-year">2026</div>
+        </div>
+        
+        <div class="publication-item" data-year="2026">
+            <div class="pub-content">
+                <h4 class="pub-title">SwarmX: A Scheduler Agent Framework for Large Agentic Workflow Clusters</h4>
+                <p class="pub-authors">Yeqi Huang, Yanwei Ye, Guomin Chen, Wenhao Su, Bin Gong, Jialian Li, Yao Fu, Yinsicheng Jiang, Xuan Sun, Le Xu, Luo Mai</p>
+                <p class="pub-venue">Submitted to 18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 26) OSDI 2026 (Under Review)</p>
+                <div class="pub-links"></div>
+            </div>
+            <div class="pub-year">2026</div>
+        </div>
+        
+        <div class="publication-item" data-year="2025">
+            <div class="pub-content">
+                <h4 class="pub-title">ContextPilot: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse</h4>
+                <p class="pub-authors">Yinsicheng Jiang, Yeqi Huang, Liang Cheng, Cheng Deng, Xuan Sun, Luo Mai</p>
+                <p class="pub-venue">9th Conference on Machine Learning and Systems (MLSys) MLSys 2026</p>
+                <div class="pub-links"><a href="https://arxiv.org/pdf/2511.03475.pdf" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a> <a href="https://arxiv.org/abs/2511.03475" class="pub-link"><i class="fas fa-link"></i> DOI</a> <a href="https://arxiv.org/abs/2511.03475" class="pub-link"><i class="fas fa-external-link-alt"></i> ArXiv</a></div>
+            </div>
+            <div class="pub-year">2025</div>
+        </div>
+        
+        <div class="publication-item" data-year="2025">
+            <div class="pub-content">
+                <h4 class="pub-title">WaferLLM: Large Language Model Inference at Wafer Scale</h4>
+                <p class="pub-authors">Congjie He, Yeqi Huang, Pei Mu, Ziming Miao, Jilong Xue, Lingxiao Ma, Fan Yang, Luo Mai</p>
+                <p class="pub-venue">17th USENIX Symposium on Operating Systems Design and Implementation (OSDI 25) OSDI 2025</p>
+                <div class="pub-links"><a href="https://www.usenix.org/conference/osdi25/presentation/he" class="pub-link"><i class="fas fa-external-link-alt"></i> OSDI 2025</a> <a href="https://github.com/MeshInfra/WaferLLM" class="pub-link"><i class="fas fa-external-link-alt"></i> GitHub</a></div>
+            </div>
+            <div class="pub-year">2025</div>
+        </div>
+        
+        <div class="publication-item" data-year="2024">
+            <div class="pub-content">
+                <h4 class="pub-title">MoE-CAP: Benchmarking Cost, Accuracy and Performance of Sparse Mixture-of-Experts Systems</h4>
+                <p class="pub-authors">Yao Fu, Yinsicheng Jiang, Yeqi Huang, Ping Nie, Zhan Lu, Leyang Xue, Congjie He, Man-Kit Sit, Jilong Xue, Li Dong, Ziming Miao, Dayou Du, Tairan Xu, Kai Zou, Edoardo Ponti, Luo Mai</p>
+                <p class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS) NeurIPS 2025</p>
+                <div class="pub-links"><a href="https://arxiv.org/pdf/2412.07067.pdf" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a> <a href="https://arxiv.org/abs/2412.07067" class="pub-link"><i class="fas fa-link"></i> DOI</a> <a href="https://arxiv.org/abs/2412.07067" class="pub-link"><i class="fas fa-external-link-alt"></i> ArXiv</a></div>
+            </div>
+            <div class="pub-year">2024</div>
+        </div>
+        
+        <div class="publication-item" data-year="2024">
+            <div class="pub-content">
+                <h4 class="pub-title">(OSDI 2024) ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models</h4>
+                <p class="pub-authors">Yao Fu, Leyang Xue, Yeqi Huang, Andrei-Octavian Brabete, Dmitrii Ustiugov, Yuvraj Patel, Luo Mai</p>
+                <p class="pub-venue"> </p>
+                <div class="pub-links"><a href="https://www.usenix.org/system/files/osdi24-fu.pdf" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a> <a href="https://doi.org/10.48550/arXiv.2401.14351" class="pub-link"><i class="fas fa-link"></i> DOI</a> <a href="https://www.usenix.org/conference/osdi24/presentation/fu" class="pub-link"><i class="fas fa-external-link-alt"></i> OSDI</a></div>
+            </div>
+            <div class="pub-year">2024</div>
+        </div>
+        
+            </div>
+            <div class="no-results" id="no-results" style="display: none;">
+                <p>没有找到匹配的论文。</p>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Yeqi Huang. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    
+<script>
+    // Search functionality
+    const searchBox = document.getElementById('publication-search');
+    const publicationsList = document.getElementById('publications-list');
+    const noResults = document.getElementById('no-results');
+    const publications = publicationsList.querySelectorAll('.publication-item');
+    const filterTags = document.querySelectorAll('.filter-tag');
+
+    let activeYear = 'all';
+
+    function filterPublications() {
+        const searchTerm = searchBox.value.toLowerCase();
+        let hasResults = false;
+
+        publications.forEach(pub => {
+            const text = pub.textContent.toLowerCase();
+            const year = pub.dataset.year;
+
+            const matchesSearch = searchTerm === '' || text.includes(searchTerm);
+            const matchesYear = activeYear === 'all' || year === activeYear;
+
+            if (matchesSearch && matchesYear) {
+                pub.style.display = 'flex';
+                hasResults = true;
+            } else {
+                pub.style.display = 'none';
+            }
+        });
+
+        noResults.style.display = hasResults ? 'none' : 'block';
+    }
+
+    searchBox.addEventListener('input', filterPublications);
+
+    filterTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            filterTags.forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            activeYear = tag.dataset.year;
+            filterPublications();
+        });
+    });
+</script>
+
+</body>
+</html>

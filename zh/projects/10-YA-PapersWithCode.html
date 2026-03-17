@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YA-PapersWithCode - 个人主页</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    
+<style>
+    .project-detail {
+        padding: 3rem 0;
+    }
+
+    .project-header {
+        margin-bottom: 2rem;
+    }
+
+    .project-header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .project-tags {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .project-tags span {
+        padding: 0.25rem 0.75rem;
+        background-color: var(--section-bg);
+        border-radius: 15px;
+        font-size: 0.875rem;
+    }
+
+    .external-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .project-featured-image {
+        margin-bottom: 3rem;
+    }
+
+    .project-featured-image img {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .project-content {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+    }
+
+    .project-content h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-content p {
+        margin-bottom: 1rem;
+    }
+
+    .project-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 8px;
+    }
+
+    .project-gallery {
+        margin-bottom: 3rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .project-navigation {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .btn-back {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../../">Yeqi Huang</a>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html">主页</a>
+                <a href="../../publications.html">论文发表</a>
+                <a href="../../projects.html">项目</a>
+            </div>
+            <div class="nav-right">
+                <a href="../../projects/10-YA-PapersWithCode.html" class="lang-switch" title="EN">EN</a>
+                <button id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+    <article class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>YA-PapersWithCode</h1>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        <span>AI</span><span>LLM</span><span>Research</span><span>Python</span><span>React</span><span>TypeScript</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            <div class="project-featured-image">
+                <img src="../../project/10-YA-PapersWithCode/featured.png" alt="YA-PapersWithCode">
+            </div>
+            
+
+            <div class="project-content">
+                <h1 id="ya-paperswithcode">YA-PapersWithCode</h1>
+<p>A modern recreation of the discontinued Papers With Code platform, providing researchers with comprehensive access to ML papers, datasets, and benchmarks.</p>
+<h2 id="overview">Overview</h2>
+<p>This initiative brings back the beloved Papers With Code platform with a contemporary tech stack and enhanced AI-powered search capabilities, making research discovery more accessible and intelligent.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Massive Database</strong>: Access to over 50,000 academic papers</li>
+<li><strong>Dataset Catalogs</strong>: Browse datasets across 39 modalities</li>
+<li><strong>Methodology Database</strong>: Explore machine learning techniques and approaches</li>
+<li><strong>Benchmark Leaderboards</strong>: Track state-of-the-art results</li>
+<li><strong>AI-Powered Search</strong>: Semantic discovery beyond simple keyword matching</li>
+<li><strong>Full-Text Search</strong>: SQLite-powered conventional search</li>
+<li><strong>Modern Interface</strong>: Contemporary React-based UI</li>
+</ul>
+<h2 id="technical-stack">Technical Stack</h2>
+<ul>
+<li><strong>Backend</strong>: FastAPI (Python 73.3%)</li>
+<li><strong>Frontend</strong>: React with TypeScript (17.9%)</li>
+<li><strong>Search</strong>: AI agents for semantic search + SQLite for full-text search</li>
+<li><strong>Deployment</strong>: Containerized architecture</li>
+<li><strong>Data Export</strong>: Built-in export capabilities</li>
+</ul>
+<h2 id="intelligent-discovery">Intelligent Discovery</h2>
+<p>The platform emphasizes intelligent search through AI-powered agents that understand research contexts and relationships, enabling researchers to discover relevant papers through semantic understanding rather than just keyword matching.</p>
+<h2 id="architecture-highlights">Architecture Highlights</h2>
+<ul>
+<li>RESTful API design</li>
+<li>Extensible plugin system for new features</li>
+<li>Scalable containerized deployment</li>
+<li>Comprehensive data management</li>
+</ul>
+<p>Perfect for ML researchers, students, and anyone tracking the latest developments in machine learning!</p>
+<p><strong>Star Count</strong>: 35 ⭐</p>
+            </div>
+
+            
+
+            <div class="project-navigation">
+                <a href="../../projects.html" class="btn-back">← 返回项目列表</a>
+            </div>
+        </div>
+    </article>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Yeqi Huang. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    
+</body>
+</html>

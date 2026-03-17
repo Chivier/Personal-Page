@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepReader - Personal Homepage</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    
+<style>
+    .project-detail {
+        padding: 3rem 0;
+    }
+
+    .project-header {
+        margin-bottom: 2rem;
+    }
+
+    .project-header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .project-tags {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .project-tags span {
+        padding: 0.25rem 0.75rem;
+        background-color: var(--section-bg);
+        border-radius: 15px;
+        font-size: 0.875rem;
+    }
+
+    .external-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .project-featured-image {
+        margin-bottom: 3rem;
+    }
+
+    .project-featured-image img {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .project-content {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+    }
+
+    .project-content h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-content p {
+        margin-bottom: 1rem;
+    }
+
+    .project-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 8px;
+    }
+
+    .project-gallery {
+        margin-bottom: 3rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .project-navigation {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .btn-back {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../">Yeqi Huang</a>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html">Homepage</a>
+                <a href="../publications.html">Publications</a>
+                <a href="../projects.html">Projects</a>
+            </div>
+            <div class="nav-right">
+                <a href="../../zh/projects/6-DeepReader.html" class="lang-switch" title="中文">中文</a>
+                <button id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+    <article class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>DeepReader</h1>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        <span>LLM</span><span>Multi-agent</span>
+                    </div>
+                    
+                    <a href="https://reader.ed-aisys.com" class="external-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                    
+                </div>
+            </div>
+
+            
+            <div class="project-featured-image">
+                <img src="../project/6-DeepReader/featured.png" alt="DeepReader">
+            </div>
+            
+
+            <div class="project-content">
+                <h1 id="deepreader">DeepReader</h1>
+<p>A sophisticated AI-powered system for generating high-quality book reviews and facilitating in-depth literary discussions.</p>
+<h2 id="overview">Overview</h2>
+<p>DeepReader combines advanced web scraping, natural language processing, and AI-powered analysis to create comprehensive book reviews and enable meaningful literary discussions. The system consists of two main components:</p>
+<ol>
+<li><strong>Data Collection &amp; Processing Pipeline</strong> - Automated tools for gathering and analyzing book reviews</li>
+<li><strong>Interactive Web Interface</strong> - Streamlit-based chatbot for engaging book discussions</li>
+</ol>
+<h2 id="key-features">Key Features</h2>
+<h3 id="intelligent-review-collection">📚 Intelligent Review Collection</h3>
+<ul>
+<li>Scrapes and processes reviews from Douban (Chinese book review platform)</li>
+<li>Downloads and transcribes video reviews from Bilibili/YouTube</li>
+<li>Handles multiple translations and editions</li>
+<li>Automated data cleaning and structuring</li>
+</ul>
+<h3 id="ai-powered-analysis">🤖 AI-Powered Analysis</h3>
+<ul>
+<li>Separates reviews into distinct components:</li>
+<li>Plot Summary (Objective)</li>
+<li>Personal Reactions (Subjective)</li>
+<li>Critical Evaluation</li>
+<li>Extended Analysis</li>
+<li>Generates comprehensive reports combining multiple perspectives</li>
+<li>Creates multi-persona discussions for deeper insights</li>
+</ul>
+<h3 id="interactive-chatbot">💬 Interactive Chatbot</h3>
+<ul>
+<li>Web-based interface for book discussions</li>
+<li>Dynamic conversation generation with multiple AI personas</li>
+<li>Bookmark creation with SVG/PNG/PDF export</li>
+<li>Customizable prompts for different discussion styles</li>
+</ul>
+            </div>
+
+            
+            <div class="project-gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <img src="../project/6-DeepReader/image-1.png" alt="DeepReader screenshot"><img src="../project/6-DeepReader/image-2.png" alt="DeepReader screenshot">
+                </div>
+            </div>
+            
+
+            <div class="project-navigation">
+                <a href="../projects.html" class="btn-back">← Back to Projects</a>
+            </div>
+        </div>
+    </article>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Yeqi Huang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    
+</body>
+</html>

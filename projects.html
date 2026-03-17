@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Personal Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    
+<style>
+    .page-header {
+        background-color: var(--section-bg);
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .search-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .search-box {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background-color: var(--bg-color);
+        transition: border-color 0.3s;
+    }
+
+    .search-box:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .filter-tags {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .filter-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.25rem;
+        background-color: var(--section-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 0.875rem;
+    }
+
+    .filter-tag:hover,
+    .filter-tag.active {
+        background-color: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+
+    .no-results {
+        text-align: center;
+        padding: 3rem;
+        color: var(--text-light);
+    }
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="">Yeqi Huang</a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Homepage</a>
+                <a href="publications.html">Publications</a>
+                <a href="projects.html">Projects</a>
+            </div>
+            <div class="nav-right">
+                <a href="zh/projects.html" class="lang-switch" title="中文">中文</a>
+                <button id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+    <div class="page-header">
+        <div class="container">
+            <h1>Projects</h1>
+            <div class="search-container">
+                <input type="text" class="search-box" id="project-search" placeholder="Search projects by title, description, or tags...">
+            </div>
+            <div class="filter-tags">
+                <span class="filter-tag active" data-tag="all">All</span>
+                <span class="filter-tag" data-tag="AI">AI</span><span class="filter-tag" data-tag="C++">C++</span><span class="filter-tag" data-tag="Data Collection">Data Collection</span><span class="filter-tag" data-tag="Deep Learning">Deep Learning</span><span class="filter-tag" data-tag="LLM">LLM</span><span class="filter-tag" data-tag="Multi-agent">Multi-agent</span><span class="filter-tag" data-tag="Plugin System">Plugin System</span><span class="filter-tag" data-tag="Python">Python</span><span class="filter-tag" data-tag="React">React</span><span class="filter-tag" data-tag="Research">Research</span><span class="filter-tag" data-tag="Stable Diffusion">Stable Diffusion</span><span class="filter-tag" data-tag="Streamlit">Streamlit</span><span class="filter-tag" data-tag="TypeScript">TypeScript</span><span class="filter-tag" data-tag="VectorDB">VectorDB</span><span class="filter-tag" data-tag="Voice Assistant">Voice Assistant</span><span class="filter-tag" data-tag="Web Application">Web Application</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid" id="projects-grid">
+                
+        <div class="project-card" data-tags="AI, LLM, Research, Python, React">
+            <img src="project/7-BTMR-Paper/featured.png" alt="BTMR-Paper" class="project-image">
+            <div class="project-content">
+                <h3>BTMR-Paper</h3>
+                <p>Insanely Fast Paper Reading Tool - An AI-powered web application for extracting, analyzing, and summarizing academic papers</p>
+                <div class="project-tags"><span class="project-tag">AI</span> <span class="project-tag">LLM</span> <span class="project-tag">Research</span> <span class="project-tag">Python</span> <span class="project-tag">React</span></div>
+                <div class="project-links"><a href="https://github.com/Chivier/BTMR-Paper" class="project-link github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a></div>
+            </div>
+        </div>
+        
+        <div class="project-card" data-tags="Python, Web Application, Streamlit, Data Collection">
+            <img src="project/8-bili-investigate/featured.png" alt="Bili-Investigate" class="project-image">
+            <div class="project-content">
+                <h3>Bili-Investigate</h3>
+                <p>A Streamlit-based web application for tracking Bilibili content creators' video updates with smart incremental fetching</p>
+                <div class="project-tags"><span class="project-tag">Python</span> <span class="project-tag">Web Application</span> <span class="project-tag">Streamlit</span> <span class="project-tag">Data Collection</span></div>
+                <div class="project-links"><a href="https://github.com/Chivier/bili-investigate" class="project-link github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a></div>
+            </div>
+        </div>
+        
+        <div class="project-card" data-tags="AI, LLM, Research, Python, React, TypeScript">
+            <img src="project/10-YA-PapersWithCode/featured.png" alt="YA-PapersWithCode" class="project-image">
+            <div class="project-content">
+                <h3>YA-PapersWithCode</h3>
+                <p>Yet Another Papers With Code - A modern recreation of the Papers With Code platform with AI-powered semantic search</p>
+                <div class="project-tags"><span class="project-tag">AI</span> <span class="project-tag">LLM</span> <span class="project-tag">Research</span> <span class="project-tag">Python</span> <span class="project-tag">React</span> <span class="project-tag">TypeScript</span></div>
+                <div class="project-links"><a href="https://github.com/Chivier/YA-PapersWithCode" class="project-link github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a></div>
+            </div>
+        </div>
+        
+        <div class="project-card" data-tags="AI, Python, C++, Plugin System, Voice Assistant">
+            <img src="project/9-ContextKeeper/featured.png" alt="ContextKeeper" class="project-image">
+            <div class="project-content">
+                <h3>ContextKeeper</h3>
+                <p>AI assistant for RTX GPU users with extensible plugin ecosystem - A community fork of NVIDIA G-Assist</p>
+                <div class="project-tags"><span class="project-tag">AI</span> <span class="project-tag">Python</span> <span class="project-tag">C++</span> <span class="project-tag">Plugin System</span> <span class="project-tag">Voice Assistant</span></div>
+                <div class="project-links"><a href="https://github.com/Chivier/ContextKeeper" class="project-link github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a></div>
+            </div>
+        </div>
+        
+        <div class="project-card" data-tags="LLM, VectorDB">
+            <img src="project/3-AutoReader/featured.png" alt="Autoreader" class="project-image">
+            <div class="project-content">
+                <h3>Autoreader</h3>
+                <p>Semantic searching in daily arXiv papers.</p>
+                <div class="project-tags"><span class="project-tag">LLM</span> <span class="project-tag">VectorDB</span></div>
+                <div class="project-links"><a href="https://autoreader.ed-aisys.com/" class="project-link external-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a></div>
+            </div>
+        </div>
+        
+        <div class="project-card" data-tags="LLM">
+            <img src="project/4-Nerif/featured.png" alt="Nerif" class="project-image">
+            <div class="project-content">
+                <h3>Nerif</h3>
+                <p>LLM-powered Python, make you write Python code with natural language.</p>
+                <div class="project-tags"><span class="project-tag">LLM</span></div>
+                <div class="project-links"><a href="https://github.com/Chivier/Nerif" class="project-link github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a><a href="http://nerif-ai.com" class="project-link external-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a></div>
+            </div>
+        </div>
+        
+        <div class="project-card" data-tags="Deep Learning">
+            <img src="project/1-TREVA/featured.png" alt="TREVA" class="project-image">
+            <div class="project-content">
+                <h3>TREVA</h3>
+                <p>Never Miss Your Lecture Again. From the 2023 HacktheBurgh Hackathon, this project aims to convert lecture recordings into understandable and readable notes.</p>
+                <div class="project-tags"><span class="project-tag">Deep Learning</span></div>
+                <div class="project-links"><a href="https://devpost.com/software/treva" class="project-link external-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a></div>
+            </div>
+        </div>
+        
+        <div class="project-card" data-tags="LLM, Multi-agent">
+            <img src="project/6-DeepReader/featured.png" alt="DeepReader" class="project-image">
+            <div class="project-content">
+                <h3>DeepReader</h3>
+                <p>DeepReader is a tool that allows you to discuss books with AI deeply.</p>
+                <div class="project-tags"><span class="project-tag">LLM</span> <span class="project-tag">Multi-agent</span></div>
+                <div class="project-links"><a href="https://github.com/Chivier/DeepReader" class="project-link github-link" target="_blank"><i class="fab fa-github"></i> GitHub</a><a href="https://reader.ed-aisys.com" class="project-link external-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a></div>
+            </div>
+        </div>
+        
+        <div class="project-card" data-tags="LLM, Stable Diffusion">
+            <img src="project/5-SD-QRCode/featured.png" alt="AI QR Code" class="project-image">
+            <div class="project-content">
+                <h3>AI QR Code</h3>
+                <p>Stable Diffusion + QR Code Generation. <strong>Generate a combined QR code for couples.</strong></p>
+                <div class="project-tags"><span class="project-tag">LLM</span> <span class="project-tag">Stable Diffusion</span></div>
+                <div class="project-links"><a href="projects/5-SD-QRCode.html" class="project-link">View Details →</a></div>
+            </div>
+        </div>
+        
+        <div class="project-card" data-tags="LLM, VectorDB">
+            <img src="project/2-Find-a-tenant/featured.png" alt="Find-A-Tenant" class="project-image">
+            <div class="project-content">
+                <h3>Find-A-Tenant</h3>
+                <p>AI rental agent, helps you find a house based on fuzzy needs. With AI Fuzzy Search Agent, Automatic Metadata Extraction Agent, and more.</p>
+                <div class="project-tags"><span class="project-tag">LLM</span> <span class="project-tag">VectorDB</span></div>
+                <div class="project-links"><a href="https://find-a-tenant.com" class="project-link external-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a></div>
+            </div>
+        </div>
+        
+            </div>
+            <div class="no-results" id="no-results" style="display: none;">
+                <p>No projects found matching your search criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Yeqi Huang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+<script>
+    // Search functionality
+    const searchBox = document.getElementById('project-search');
+    const projectsGrid = document.getElementById('projects-grid');
+    const noResults = document.getElementById('no-results');
+    const projects = projectsGrid.querySelectorAll('.project-card');
+    const filterTags = document.querySelectorAll('.filter-tag');
+
+    let activeTag = 'all';
+
+    function filterProjects() {
+        const searchTerm = searchBox.value.toLowerCase();
+        let hasResults = false;
+
+        projects.forEach(project => {
+            const text = project.textContent.toLowerCase();
+            const tags = project.dataset.tags ? project.dataset.tags.toLowerCase() : '';
+
+            const matchesSearch = searchTerm === '' || text.includes(searchTerm);
+            const matchesTag = activeTag === 'all' || tags.includes(activeTag.toLowerCase());
+
+            if (matchesSearch && matchesTag) {
+                project.style.display = 'block';
+                hasResults = true;
+            } else {
+                project.style.display = 'none';
+            }
+        });
+
+        noResults.style.display = hasResults ? 'none' : 'block';
+    }
+
+    searchBox.addEventListener('input', filterProjects);
+
+    filterTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            filterTags.forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            activeTag = tag.dataset.tag;
+            filterProjects();
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bili-Investigate - 个人主页</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    
+<style>
+    .project-detail {
+        padding: 3rem 0;
+    }
+
+    .project-header {
+        margin-bottom: 2rem;
+    }
+
+    .project-header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .project-tags {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .project-tags span {
+        padding: 0.25rem 0.75rem;
+        background-color: var(--section-bg);
+        border-radius: 15px;
+        font-size: 0.875rem;
+    }
+
+    .external-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .project-featured-image {
+        margin-bottom: 3rem;
+    }
+
+    .project-featured-image img {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .project-content {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+    }
+
+    .project-content h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-content p {
+        margin-bottom: 1rem;
+    }
+
+    .project-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 8px;
+    }
+
+    .project-gallery {
+        margin-bottom: 3rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .project-navigation {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .btn-back {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../../">Yeqi Huang</a>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html">主页</a>
+                <a href="../../publications.html">论文发表</a>
+                <a href="../../projects.html">项目</a>
+            </div>
+            <div class="nav-right">
+                <a href="../../projects/8-bili-investigate.html" class="lang-switch" title="EN">EN</a>
+                <button id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+    <article class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>Bili-Investigate</h1>
+                <div class="project-meta">
+                    <div class="project-tags">
+                        <span>Python</span><span>Web Application</span><span>Streamlit</span><span>Data Collection</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            <div class="project-featured-image">
+                <img src="../../project/8-bili-investigate/featured.png" alt="Bili-Investigate">
+            </div>
+            
+
+            <div class="project-content">
+                <h1 id="bili-investigate">Bili-Investigate</h1>
+<p>A smart web application for tracking and managing Bilibili content creators' video catalogs.</p>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Obtaining comprehensive video lists from Bilibili content creators is challenging, particularly for educational series and long-running content. This tool addresses that need with an intuitive interface.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Smart Incremental Updates</strong>: Intelligent fetching to avoid redundant data collection</li>
+<li><strong>Creator Management</strong>: Easy interface for following and managing content creators</li>
+<li><strong>Complete Video Catalogs</strong>: Browse full video histories of your favorite creators</li>
+<li><strong>Advanced Search</strong>: Find specific videos across all tracked creators</li>
+<li><strong>Flexible Sorting</strong>: Multiple sorting options for better organization</li>
+<li><strong>Local Storage</strong>: JSON and CSV formats for data persistence</li>
+</ul>
+<h2 id="technical-details">Technical Details</h2>
+<ul>
+<li><strong>Language</strong>: Python (71.2% of codebase)</li>
+<li><strong>Framework</strong>: Streamlit for the web interface</li>
+<li><strong>Deployment</strong>: Docker support for easy setup</li>
+<li><strong>Platforms</strong>: macOS and Linux compatible</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<p>Perfect for:
+- Researchers tracking educational content
+- Fans following multiple creators
+- Content curators building collections
+- Anyone needing comprehensive Bilibili video catalogs</p>
+            </div>
+
+            
+
+            <div class="project-navigation">
+                <a href="../../projects.html" class="btn-back">← 返回项目列表</a>
+            </div>
+        </div>
+    </article>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Yeqi Huang. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    
+</body>
+</html>
