@@ -1,5 +1,5 @@
 ---
-title: "RAGBoost: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse"
+title: "ContextPilot: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse"
 authors:
 - Yinsicheng Jiang
 - Yeqi Huang
@@ -19,13 +19,13 @@ publishDate: "2025-11-05T00:00:00Z"
 publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
-publication: "8th Conference on Machine Learning and Systems (MLSys)"
-publication_short: "MLSys 2025"
+publication: "9th Conference on Machine Learning and Systems (MLSys)"
+publication_short: "MLSys 2026"
 
-abstract: "Retrieval-augmented generation (RAG) systems enhance large language models (LLMs) by incorporating external knowledge from retrieval databases. However, these systems face significant computational overhead from retrieving and processing similar or identical contexts across concurrent sessions and multi-turn interactions. This paper introduces RAGBoost, an efficient RAG system that detects overlapping retrieved items across sessions to maximize cache efficiency. RAGBoost employs efficient context indexing, ordering, and de-duplication while maintaining accuracy through lightweight contextual hints. Our comprehensive evaluation shows that RAGBoost achieves 1.5-3X performance improvements for prefill operations compared to existing methods, demonstrating substantial efficiency gains without sacrificing generation quality."
+abstract: "Retrieval-augmented generation (RAG) systems enhance large language models (LLMs) by incorporating external knowledge from retrieval databases. However, these systems face significant computational overhead from retrieving and processing similar or identical contexts across concurrent sessions and multi-turn interactions. This paper introduces ContextPilot, an efficient RAG system that detects overlapping retrieved items across sessions to maximize cache efficiency. ContextPilot employs efficient context indexing, ordering, and de-duplication while maintaining accuracy through lightweight contextual hints. Our comprehensive evaluation shows that ContextPilot achieves 1.5-3X performance improvements for prefill operations compared to existing methods, demonstrating substantial efficiency gains without sacrificing generation quality."
 
 # Summary. An optional shortened abstract.
-summary: "RAGBoost introduces an efficient retrieval-augmented generation system that maximizes cache efficiency by detecting and reusing overlapping retrieved contexts across concurrent sessions and multi-turn interactions. Through efficient context indexing, ordering, and de-duplication with lightweight contextual hints, RAGBoost achieves 1.5-3X performance improvements for prefill operations while maintaining accuracy."
+summary: "ContextPilot introduces an efficient retrieval-augmented generation system that maximizes cache efficiency by detecting and reusing overlapping retrieved contexts across concurrent sessions and multi-turn interactions. Through efficient context indexing, ordering, and de-duplication with lightweight contextual hints, ContextPilot achieves 1.5-3X performance improvements for prefill operations while maintaining accuracy."
 
 tags:
 - Large Language Models
@@ -51,7 +51,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: 'RAGBoost Framework Overview'
+  caption: 'ContextPilot Framework Overview'
   focal_point: "Smart"
   preview_only: false
 
@@ -62,7 +62,7 @@ slides: ""
 
 ## Key Contributions
 
-**RAGBoost** introduces an efficient retrieval-augmented generation system with three main innovations:
+**ContextPilot** introduces an efficient retrieval-augmented generation system with three main innovations:
 
 ### 1. Context Overlap Detection
 - **Cross-Session Reuse**: Identifies overlapping retrieved items across concurrent RAG sessions
@@ -93,7 +93,7 @@ slides: ""
 
 ## Technical Innovation
 
-RAGBoost addresses critical efficiency challenges in RAG systems:
+ContextPilot addresses critical efficiency challenges in RAG systems:
 
 - **Redundant Retrieval**: Eliminates repeated retrieval of similar contexts
 - **Cache Utilization**: Maximizes benefit from existing cache infrastructure
@@ -101,7 +101,7 @@ RAGBoost addresses critical efficiency challenges in RAG systems:
 
 ## Impact and Applications
 
-RAGBoost enables:
+ContextPilot enables:
 - **Cost-Effective RAG**: Reduced computational costs for production RAG systems
 - **Real-Time Applications**: Lower latency for interactive RAG workloads
 - **Scalable Deployment**: Efficient multi-user RAG services
