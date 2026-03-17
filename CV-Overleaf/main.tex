@@ -1,0 +1,274 @@
+\documentclass[a4paper,20pt]{article}
+% update 07-11-2023
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{ctex}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Yeqi Huang}} & Email: \href{mailto:}{yeqi.huang@ed.ac.uk}\\
+  \href{https://yeqi-huang.com}{Personal Site: yeqi-huang.com}
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading{University of Edinburgh}{Edinburgh, UK}
+      {PhD in Computer Science}{August 2023 - Present}
+\vspace{-3pt}
+      {\scriptsize \textit{ \footnotesize{\newline{}\textbf{Research Field:} AI-Systems, Distributed ML, ML-oriented Architecture, Serverless}}}
+\resumeSubheading{University of Science and Technology of China}{Hefei, China}
+      {Bachelor of Computer Science; The school of Gifted Young;}{July 2017 - June 2021}
+\vspace{-3pt}
+      {\scriptsize \textit{ \footnotesize{\newline{}\textbf{Courses:} Operating Systems, Artificial Intelligence, Principles of Compiler, Computer Architecture, High Performance Architecture}}}
+\vspace{-3pt}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%-----------PROJECTS-----------------
+\section{Publications}
+\resumeSubHeadingListStart
+\item [1] Yao Fu, Leyang Xue, \textbf{Yeqi Huang}, et al. "ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models." In \textit{18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)}, 2024.
+\vspace{-5pt}
+\item [2] Yao Fu, Yinsicheng Jiang, \textbf{Yeqi Huang}, et al. "MoE-CAP: Cost-Accuracy-Performance Benchmarking for Mixture-of-Experts Systems." \textit{NeurIPS}, 2025.
+\vspace{-5pt}
+\item [3] Congjie He, \textbf{Yeqi Huang}, Pei Mu, et al. "WaferLLM: Large Language Model Inference at Wafer Scale." \textit{Under Review}, OSDI 2025.
+\vspace{-5pt}
+
+\item [4] Xiao-Long Chen, Lin-Feng Wang, \textbf{Yeqi Huang}, et al. "Symplectic structure-preserving particle-in-cell whole-volume simulation of tokamak plasmas." In \textit{SC21: International Conference for High Performance Computing, Networking, Storage and Analysis}, 2021.
+\vspace{-5pt}
+\item [5] Yinsicheng Jiang, \textbf{Yeqi Huang}, Liang Cheng, et al. "RAGBoost: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse." \textit{arXiv preprint}, arXiv:2511.03475, 2025.
+\resumeSubHeadingListEnd
+
+
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeSubItem{QED Simulation on GPU}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item Implemented high-performance Monte-Carlo simulation achieving 1500x to 5000x speedup.\vspace{-3pt}
+\item Received recognition from Nobel Laureate Frank Wilczek at APS conference.\vspace{-3pt}
+\item Demonstrated expertise in CUDA programming and GPU micro-architecture optimization.\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{AutoReader Project}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item Built a vector database for the latest ArXiv papers for daily semantic search and subscription.(Full-stack AI application)\vspace{-3pt}
+
+\item Achieving \textit{\textbf{60$\times$ faster indexing than NVIDIA cuVS}} library and \textit{\textbf{13$\times$ faster retrieval than Milvus}}.\vspace{-3pt}
+\item Extended system to support bioRxiv and PubMed papers with specialized biology-focused features.\vspace{-3pt}
+\item Biology patched version is demostrating in Dartmouth university, will submit to Nature this year.\vspace{-3pt}
+\end{description}
+}
+
+
+
+
+
+\resumeSubItem{MICA (submitted to OSDI 2026)}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item Developed the first end-to-end compiler stack for mesh accelerators (Cerebras, Tenstorrent) with a novel MeshIR.\vspace{-3pt}
+\item Implemented a search framework reducing schedule search from weeks to hours for millions of cores.\vspace{-3pt}
+\item Achieved 3.6$\times$ performance improvements over state-of-the-art compilers and 1.4$\times$ over expert hand-tuned codes.\vspace{-3pt}
+\item Enabled applications to run 100--200$\times$ faster than on GPUs by efficiently exploring temporal-spatial schedules.\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{SwarmX (submitted to OSDI 2026)}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item Presented the first scheduler agent framework that formulates cluster scheduling as an agentic intelligence problem.\vspace{-3pt}
+\item Deployed in production on tens of thousands of servers, improving P99 latency by up to 50\% and doubling throughput.\vspace{-3pt}
+\item Designed modular agents with neural predictors and memory to optimize complex workflow performance.\vspace{-3pt}
+\item Maintained compatibility with Ray and ComfyUI, enabling existing workflows to run without modification.\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{BioVLM Research Project}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item Collaborated with Dartmouth and Harvard Medical School on biological literature interpretation.\vspace{-3pt}
+\item Developed advanced Vision ability by adapting GRPO RL Training, CoT training, ReFT, and long context with RAG.\vspace{-3pt}
+\item Achieved 23\% improvement over GPT-4o in double-blind human evaluations. \vspace{-3pt}
+\item Achieved 10\% improvement over GPT-5 in LabBench benchmark.\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{AI4Math - Sketchpad Project}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item Received grant from AI for Math Fund to develop Sketchpad system for formal mathematics (\href{https://www.renaissancephilanthropy.org/news-and-insights/ai-for-math-fund-announces-18-million-in-grants-to-accelerate-breakthrough-discoveries-in-mathematicsnbsp}{announcement})\vspace{-3pt}
+\item Building system that automatically converts mathematical proofs into structured data using graph-based representation.\vspace{-3pt}
+\item Enabling decomposition of proofs into individual statements for more precise auto-formalization.\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{More Projects (\href{https://autoreader.ed-aisys.com/}{https://yeqi-huang.com/})}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item I have plenty of AI related projects on my personal page.\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%----------------------------------------------------------------------------------------
+%	TALKS
+%----------------------------------------------------------------------------------------
+
+\section{Talks}
+\resumeSubHeadingListStart
+\item [1] \textbf{Yeqi Huang}. "InfiniTensor: A Tensor-Friendly, Efficient Parallel Programming Library for Accelerator-Centric Clusters." \textit{UKSys 2024}.
+\vspace{-5pt}
+\item [2] \textbf{Yeqi Huang}. "Why we need a new clustering benchmark in AI retrieval?" \textit{International Workshop on Efficient Generative AI}, 2024.
+\resumeSubHeadingListEnd
+
+%----------------------------------------------------------------------------------------
+%	TEACHING EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Teaching Experience}
+
+\resumeSubHeadingListStart
+
+\resumeSubItem{Machine Learning System TA}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item Teaching assistant for CUDA programming course, covering GPU architecture, CUDA, CuPy, and Triton.\vspace{-3pt}
+\item Designed hands-on exercises and projects to help students master parallel programming concepts.\vspace{-3pt}
+\end{description}
+}
+\resumeSubHeadingListEnd
+
+%----------------------------------------------------------------------------------------
+%	AWARDS
+%----------------------------------------------------------------------------------------
+\section{Awards}
+\textbf{International Awards:}
+\vspace{-8pt}
+\begin{description}[font=$\bullet$]
+\item {International Supercomputing Conference Student Cluster Competition Champion - 2021}
+\vspace{-8pt}
+\item {Asian Supercomputer Conference Student Cluster Competition First Prize - 2021}
+\vspace{-8pt}
+\end{description}
+\textbf{National Awards:}
+\vspace{-8pt}
+\begin{description}[font=$\bullet$]
+\item {Best Chinese Supercomputing Application of the Year - 2022}
+\vspace{-8pt}
+\item {Huawei Pioneer Developer (4 in China) - 2021}
+\vspace{-8pt}
+\item {National Compiler Designing Competition Second Prize - 2021}
+\vspace{-8pt}
+\end{description}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Skills}
+
+\resumeSubHeadingListStart
+\resumeSubItem{AI-Related}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+    \item In-depth understanding of LLMs, with experience porting high-performance inference and training frameworks to various hardware platforms, including Apple Silicon, GPUs, and Cerebras.\vspace{-3pt}
+    \item Strong understanding of vector retrieval, having developed and tested graph and vector databases on multiple platforms.\vspace{-3pt}
+    \item In-depth knowledge of Multi-Agent applications and developed efficient development components for such applications.\vspace{-3pt}
+\end{description}
+}
+\resumeSubItem{Computer Science Related}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+	\item Highly skilled in \textbf{C++, Python, Rust}; familiar with Go, JavaScript, and Latex\vspace{-3pt}
+	\item Proficient with \textbf{CUDA, Intel ONEAPI, OpenMP} and related parallel and distributed programming\vspace{-3pt}
+	\item Well-versed in \textbf{LLVM}, frequently participating in LLVM Forum online discussions\vspace{-3pt}
+	\item Extensive experience working with Linux, including usage of eBPF\vspace{-3pt}
+	\item Rich experience in distributed systems and distributed machine learning frameworks\vspace{-3pt}
+	\item Strong engineering development experience, mastering various compiler-related tools and static analysis tools\vspace{-3pt}
+\end{description}
+}
+\resumeSubItem{Physics \& Math}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+	\item Highly skilled in Computational Fluid Dynamics and Molecular Dynamics\vspace{-3pt}
+	\item Strong knowledge in numerical methods and linear algebra\vspace{-3pt}
+	\item Proficient in Quantum Mechanics and Quantum Electrodynamics, with some knowledge of quantum computing\vspace{-3pt}
+\end{description}
+}
+\resumeSubHeadingListEnd
+
+
+
+\section{Special Experience}
+
+\resumeSubHeadingListStart
+\resumeSubItem{Open Source Enthusiast}{Contributing to notable projects like GNOME, LAMMPS, and LLVM, I've used GitHub since 2019 to showcase my development journey and ideas.}
+\resumeSubItem{Running a Science-Themed Cafe}{Leveraging software development income, I established Quantum Coffee near my school—a collaborative space encouraging students to explore and discuss scientific topics across disciplines.}
+\resumeSubItem{UNICEF Charity Projects}{I have donated 10\% of all personal income to children's charities since 2019.}
+\resumeItemListEnd
+
+\end{document}
