@@ -670,45 +670,56 @@ class PersonalHomepageGenerator:
             self.copy_static_files(output_dir)
             self.copy_assets(output_dir)
 
-    def compile_cv(self) -> subprocess.Popen | None:
-        """Start xelatex compilation of CV in the background. Returns the process handle."""
+    def compile_cv(self) -> list[subprocess.Popen]:
+        """Start xelatex compilation of CVs in the background. Returns process handles."""
         cv_dir = Path("CV-Overleaf")
-        tex_file = cv_dir / "main.tex"
-        if not tex_file.exists():
-            print("No CV-Overleaf/main.tex found, skipping CV compilation.")
-            return None
+        procs = []
+        for tex_name in ["main.tex", "main_zh.tex"]:
+            tex_file = cv_dir / tex_name
+            if not tex_file.exists():
+                continue
+            print(f"Starting CV compilation ({tex_name})...")
+            try:
+                proc = subprocess.Popen(
+                    ["xelatex", "-interaction=nonstopmode", "-halt-on-error", tex_name],
+                    cwd=cv_dir,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                )
+                procs.append((tex_name, proc))
+            except FileNotFoundError:
+                print("Warning: xelatex not found, skipping CV compilation.")
+                break
+        return procs
 
-        print("Starting CV compilation (xelatex)...")
-        try:
-            proc = subprocess.Popen(
-                ["xelatex", "-interaction=nonstopmode", "-halt-on-error", "main.tex"],
-                cwd=cv_dir,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-            )
-            return proc
-        except FileNotFoundError:
-            print("Warning: xelatex not found, skipping CV compilation.")
-            return None
-
-    def collect_cv(self, proc: subprocess.Popen | None):
-        """Wait for CV compilation to finish and copy the PDF to dist/uploads/."""
-        if proc is not None:
+    def collect_cv(self, procs: list):
+        """Wait for CV compilations to finish and copy PDFs to dist/uploads/."""
+        for tex_name, proc in procs:
             stdout, _ = proc.communicate()
+            pdf_name = tex_name.replace(".tex", ".pdf")
             if proc.returncode != 0:
-                print("Warning: xelatex compilation failed:")
+                print(f"Warning: xelatex compilation failed for {tex_name}:")
                 print(stdout.decode(errors="replace")[-2000:])
             else:
-                print("CV compilation succeeded.")
+                print(f"CV compilation succeeded: {pdf_name}")
 
-        # Copy PDF if it exists (either freshly compiled or pre-built by CI)
-        pdf_src = Path("CV-Overleaf") / "main.pdf"
-        if pdf_src.exists():
-            for out_dir in [self.output_dir, self.output_dir / "zh"]:
-                uploads_dir = out_dir / "uploads"
-                uploads_dir.mkdir(parents=True, exist_ok=True)
-                shutil.copy(pdf_src, uploads_dir / "resume.pdf")
-            print("CV copied to dist/uploads/resume.pdf")
+        # Copy English CV to both en and zh dist
+        cv_dir = Path("CV-Overleaf")
+        pdf_en = cv_dir / "main.pdf"
+        pdf_zh = cv_dir / "main_zh.pdf"
+
+        if pdf_en.exists():
+            uploads = self.output_dir / "uploads"
+            uploads.mkdir(parents=True, exist_ok=True)
+            shutil.copy(pdf_en, uploads / "resume.pdf")
+            # Also copy to zh if no Chinese CV
+            zh_uploads = self.output_dir / "zh" / "uploads"
+            zh_uploads.mkdir(parents=True, exist_ok=True)
+            if pdf_zh.exists():
+                shutil.copy(pdf_zh, zh_uploads / "resume.pdf")
+            else:
+                shutil.copy(pdf_en, zh_uploads / "resume.pdf")
+            print("CV PDFs copied to dist/uploads/")
         else:
             print("Warning: No CV PDF found at CV-Overleaf/main.pdf")
 

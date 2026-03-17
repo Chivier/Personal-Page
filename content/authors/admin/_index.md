@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: PhD of Serverless
+role: PhD in Computer Science
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -36,12 +36,12 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: PhD in Serverless System
+    - course: PhD in Computer Science
       institution: University of Edinburgh
-      year: 2023
+      year: 2023 - Present
     - course: BSc in Computer Science
       institution: University of Science and Technology of China
-      year: 2017
+      year: 2017 - 2021
 
 # Skills
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons

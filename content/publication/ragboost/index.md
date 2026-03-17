@@ -19,8 +19,8 @@ publishDate: "2025-11-05T00:00:00Z"
 publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
-publication: "Submitted to 8th Conference on Machine Learning and Systems (MLSys 2026)"
-publication_short: "MLSys 2026 (Under Review)"
+publication: "8th Conference on Machine Learning and Systems (MLSys)"
+publication_short: "MLSys 2025"
 
 abstract: "Retrieval-augmented generation (RAG) systems enhance large language models (LLMs) by incorporating external knowledge from retrieval databases. However, these systems face significant computational overhead from retrieving and processing similar or identical contexts across concurrent sessions and multi-turn interactions. This paper introduces RAGBoost, an efficient RAG system that detects overlapping retrieved items across sessions to maximize cache efficiency. RAGBoost employs efficient context indexing, ordering, and de-duplication while maintaining accuracy through lightweight contextual hints. Our comprehensive evaluation shows that RAGBoost achieves 1.5-3X performance improvements for prefill operations compared to existing methods, demonstrating substantial efficiency gains without sacrificing generation quality."
 

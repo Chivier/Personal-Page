@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: 无服务器方向博士生
+role: 计算机科学博士生
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -36,12 +36,12 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: 无服务器系统方向博士
+    - course: 计算机科学博士
       institution: 爱丁堡大学
-      year: 2023
+      year: 2023 - 至今
     - course: 计算机科学学士
       institution: 中国科学技术大学
-      year: 2017
+      year: 2017 - 2021
 
 # Skills
 skills:

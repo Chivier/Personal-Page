@@ -1,8 +1,8 @@
 ---
 title: "MoE-CAP: Benchmarking Cost, Accuracy and Performance of Sparse Mixture-of-Experts Systems"
 authors:
-- Yinsicheng Jiang
 - Yao Fu
+- Yinsicheng Jiang
 - Yeqi Huang
 - Ping Nie
 - Zhan Lu
@@ -29,8 +29,8 @@ publishDate: "2024-12-10T00:00:00Z"
 publication_types: ["article-journal"]
 
 # Publication name and optional abbreviated publication name.
-publication: "arXiv preprint"
-publication_short: "arXiv"
+publication: "Advances in Neural Information Processing Systems (NeurIPS)"
+publication_short: "NeurIPS 2025"
 
 abstract: "The sparse Mixture-of-Experts (MoE) architecture is increasingly favored for scaling Large Language Models (LLMs) efficiently, but it depends on heterogeneous compute and memory resources. These factors jointly affect system Cost, Accuracy, and Performance (CAP), making trade-offs inevitable. Existing benchmarks often fail to capture these trade-offs accurately, complicating practical deployment decisions. To address this, we introduce MoE-CAP, a benchmark specifically designed for MoE systems. Our analysis reveals that achieving an optimal balance across CAP is difficult with current hardware; MoE systems typically optimize two of the three dimensions at the expense of the third-a dynamic we term the MoE-CAP trade-off. To visualize this, we propose the CAP Radar Diagram. We further introduce sparsity-aware performance metrics-Sparse Memory Bandwidth Utilization (S-MBU) and Sparse Model FLOPS Utilization (S-MFU)—to enable accurate performance benchmarking of MoE systems across diverse hardware platforms and deployment scenarios."
 
