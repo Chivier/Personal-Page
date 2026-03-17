@@ -1,0 +1,291 @@
+\documentclass[a4paper,20pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{ctex}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE 黄业琦}} & 邮箱: \href{mailto:}{yeqi.huang@ed.ac.uk}\\
+  \href{https://yeqi-huang.com}{个人主页: yeqi-huang.com}
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{教育经历}
+\resumeSubHeadingListStart
+    \resumeSubheading{爱丁堡大学}{英国爱丁堡}
+      {计算机科学博士}{2023年8月 - 至今}
+\vspace{-3pt}
+      {\scriptsize \textit{ \footnotesize{\newline{}\textbf{研究方向:} AI系统、分布式机器学习、面向ML的体系结构、无服务器计算}}}
+\resumeSubheading{中国科学技术大学}{中国合肥}
+      {计算机科学学士；少年班学院}{2017年7月 - 2021年6月}
+\vspace{-3pt}
+      {\scriptsize \textit{ \footnotesize{\newline{}\textbf{核心课程:} 操作系统、人工智能、编译原理、计算机体系结构、高性能体系结构}}}
+\vspace{-3pt}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%-----------PUBLICATIONS-----------------
+\section{学术论文}
+\resumeSubHeadingListStart
+\item [1] \textbf{Yeqi Huang}, Congjie He, Haocheng Xiao 等. ``MICA: An End-to-End Compiler Stack for Mesh Accelerators.'' \textit{审稿中}, OSDI 2026.
+\vspace{-5pt}
+\item [2] \textbf{Yeqi Huang}, Yanwei Ye, Guomin Chen 等. ``SwarmX: Agentic Cluster Scheduling Framework.'' \textit{审稿中}, OSDI 2026.
+\vspace{-5pt}
+\item [3] \textbf{Yeqi Huang}, Yue Chen, Yanwei Ye 等. ``BioVLM: Evidence-Enriched Data Synthesis from Biomedical Papers.'' \textit{审稿中}, ACL 2025 系统演示.
+\vspace{-5pt}
+\item [4] Chuanming Zha, Jiamin Zheng, \textbf{Yeqi Huang} 等. ``LLM-Monitor: Efficient Privacy Violation Monitoring for LLMs.'' \textit{审稿中}, ACL 2025 系统演示.
+\vspace{-5pt}
+\item [5] Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*}, Liang Cheng 等. ``RAGBoost: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse.'' \textit{MLSys}, 2025. (\textsuperscript{*}共同一作)
+\vspace{-5pt}
+\item [6] Congjie He, \textbf{Yeqi Huang}, Pei Mu 等. ``WaferLLM: Large Language Model Inference at Wafer Scale.'' \textit{审稿中}, OSDI 2025.
+\vspace{-5pt}
+\item [7] Yao Fu\textsuperscript{*}, Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*} 等. ``MoE-CAP: Cost-Accuracy-Performance Benchmarking for Mixture-of-Experts Systems.'' \textit{NeurIPS}, 2025. (\textsuperscript{*}共同一作)
+\vspace{-5pt}
+\item [8] Yao Fu, Leyang Xue, \textbf{Yeqi Huang} 等. ``ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models.'' 发表于 \textit{第18届 USENIX 操作系统设计与实现研讨会 (OSDI 24)}, 2024.
+\vspace{-5pt}
+\item [9] Xiao-Long Chen, Lin-Feng Wang, \textbf{Yeqi Huang} 等. ``Symplectic structure-preserving particle-in-cell whole-volume simulation of tokamak plasmas.'' 发表于 \textit{SC21: 国际高性能计算、网络、存储与分析会议}, 2021.
+\resumeSubHeadingListEnd
+
+
+
+\section{项目经历}
+\resumeSubHeadingListStart
+
+\resumeSubItem{GPU上的QED模拟}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 实现了高性能蒙特卡罗模拟，实现1500至5000倍加速。\vspace{-3pt}
+\item 在APS会议上获得诺贝尔奖得主Frank Wilczek的认可。\vspace{-3pt}
+\item 展示了CUDA编程和GPU微架构优化方面的专业技能。\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{AutoReader项目}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 构建了面向最新ArXiv论文的向量数据库，支持每日语义搜索和订阅。（全栈AI应用）\vspace{-3pt}
+\item 实现了\textit{\textbf{比NVIDIA cuVS快60倍的索引速度}}和\textit{\textbf{比Milvus快13倍的检索速度}}。\vspace{-3pt}
+\item 扩展系统支持bioRxiv和PubMed论文，具备专业的生物学功能。\vspace{-3pt}
+\item 生物学版本正在达特茅斯大学进行演示，计划今年向Nature投稿。\vspace{-3pt}
+\end{description}
+}
+
+
+\resumeSubItem{MICA（已投稿OSDI 2026）}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 开发了首个面向网格加速器（Cerebras、Tenstorrent）的端到端编译器栈，提出全新的MeshIR。\vspace{-3pt}
+\item 实现了搜索框架，将百万核级调度搜索时间从数周缩短至数小时。\vspace{-3pt}
+\item 相比最先进编译器实现3.6倍性能提升，相比专家手工调优代码实现1.4倍提升。\vspace{-3pt}
+\item 通过高效探索时空调度，使应用程序运行速度比GPU快100--200倍。\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{SwarmX（已投稿OSDI 2026）}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 提出首个将集群调度建模为智能体问题的调度器代理框架。\vspace{-3pt}
+\item 在数万台服务器上进行生产部署，P99延迟降低最高50\%，吞吐量翻倍。\vspace{-3pt}
+\item 设计了带有神经预测器和记忆模块的模块化代理，优化复杂工作流性能。\vspace{-3pt}
+\item 保持与Ray和ComfyUI的兼容性，现有工作流无需修改即可运行。\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{BioVLM（已投稿ACL 2025系统演示）}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 自动化流水线将生物医学论文转化为证据增强的VLM训练数据。\vspace{-3pt}
+\item 在Qwen3-VL-8B上进行渐进式后训练（SFT + RL），以低于200美元成本训练BioVLM-8B。\vspace{-3pt}
+\item 在LAB-Bench上达到48.0\%加权准确率，比基础模型高12.6\%，比GPT-5.2高3.8\%。\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{LLM-Monitor（已投稿ACL 2025系统演示）}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 设计了面向LLM的低成本、高质量、可进化的隐私违规监控系统。\vspace{-3pt}
+\item 将监控需求组织编译为本地中等规模模型可执行的优化表示。\vspace{-3pt}
+\item 使用基于Qwen3-8B的专用模型，实现比GPT-5.2高15倍的监控加速。\vspace{-3pt}
+\item 匹配大型公共模型（GPT-5.2）的监控质量，同时显著更快更便宜。\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{AI4Math - Sketchpad项目}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 获得AI for Math基金资助，开发面向形式数学的Sketchpad系统（\href{https://www.renaissancephilanthropy.org/news-and-insights/ai-for-math-fund-announces-18-million-in-grants-to-accelerate-breakthrough-discoveries-in-mathematicsnbsp}{公告链接}）\vspace{-3pt}
+\item 构建自动将数学证明转化为结构化数据的系统，采用基于图的表示。\vspace{-3pt}
+\item 实现将证明分解为单独命题，以实现更精确的自动形式化。\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubItem{更多项目 (\href{https://yeqi-huang.com/}{https://yeqi-huang.com/})}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 更多AI相关项目请访问我的个人主页。\vspace{-3pt}
+\end{description}
+}
+
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%----------------------------------------------------------------------------------------
+%	TALKS
+%----------------------------------------------------------------------------------------
+
+\section{学术报告}
+{\small
+\resumeSubHeadingListStart
+\item [1] \textbf{Yeqi Huang}. ``InfiniTensor: A Tensor-Friendly, Efficient Parallel Programming Library for Accelerator-Centric Clusters.'' \textit{UKSys}, 2024.
+\vspace{-5pt}
+\item [2] \textbf{Yeqi Huang}. ``Why we need a new clustering benchmark in AI retrieval?'' \textit{Int'l Workshop on Efficient Generative AI}, 2024.
+\resumeSubHeadingListEnd
+}
+
+%----------------------------------------------------------------------------------------
+%	TEACHING EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{教学经历}
+
+\resumeSubHeadingListStart
+
+\resumeSubItem{机器学习系统助教 (2025)}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 担任CUDA编程课程助教，涵盖GPU架构、CUDA、CuPy和Triton。\vspace{-3pt}
+\item 设计动手实验和项目，帮助学生掌握并行编程概念。\vspace{-3pt}
+\end{description}
+}
+\resumeSubItem{机器学习系统助教 (2026)}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 担任助教，新增CuTile编程模块，教授基于Tile的GPU编程。\vspace{-3pt}
+\end{description}
+}
+\resumeSubHeadingListEnd
+
+%----------------------------------------------------------------------------------------
+%	AWARDS
+%----------------------------------------------------------------------------------------
+\section{获奖经历}
+\textbf{国际奖项:}
+\vspace{-8pt}
+\begin{description}[font=$\bullet$]
+\item {国际超级计算大会学生集群竞赛冠军 - 2021}
+\vspace{-8pt}
+\item {亚洲超算大会学生集群竞赛一等奖 - 2021}
+\vspace{-8pt}
+\end{description}
+\textbf{国内奖项:}
+\vspace{-8pt}
+\begin{description}[font=$\bullet$]
+\item {年度最佳中国超算应用 - 2022}
+\vspace{-8pt}
+\item {华为先锋开发者（全国仅4人）- 2021}
+\vspace{-8pt}
+\item {全国编译系统设计赛二等奖 - 2021}
+\vspace{-8pt}
+\end{description}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{专业技能}
+
+\resumeSubHeadingListStart
+\resumeSubItem{AI相关}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+    \item 深入理解大语言模型，具有将高性能推理和训练框架移植到Apple Silicon、GPU和Cerebras等多种硬件平台的经验。\vspace{-3pt}
+    \item 深入理解向量检索，在多个平台上开发和测试过图数据库和向量数据库。\vspace{-3pt}
+    \item 深入了解多智能体应用，开发了面向此类应用的高效开发组件。\vspace{-3pt}
+\end{description}
+}
+\resumeSubItem{计算机科学相关}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+	\item 精通\textbf{C++、Python、Rust}；熟悉Go、JavaScript和LaTeX\vspace{-3pt}
+	\item 精通\textbf{CUDA、Intel ONEAPI、OpenMP}及相关并行与分布式编程\vspace{-3pt}
+	\item 精通\textbf{LLVM}，经常参与LLVM论坛在线讨论\vspace{-3pt}
+	\item 丰富的Linux使用经验，包括eBPF的使用\vspace{-3pt}
+	\item 丰富的分布式系统和分布式机器学习框架经验\vspace{-3pt}
+	\item 扎实的工程开发经验，掌握各类编译器相关工具和静态分析工具\vspace{-3pt}
+\end{description}
+}
+\resumeSubItem{物理与数学}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+	\item 精通计算流体力学和分子动力学\vspace{-3pt}
+	\item 扎实的数值方法和线性代数知识\vspace{-3pt}
+	\item 精通量子力学和量子电动力学，了解量子计算\vspace{-3pt}
+\end{description}
+}
+\resumeSubHeadingListEnd
+
+
+
+\section{特殊经历}
+
+\resumeSubHeadingListStart
+\resumeSubItem{开源爱好者}{参与贡献GNOME、LAMMPS和LLVM等知名项目，自2019年起使用GitHub展示开发历程和创意。}
+\resumeSubItem{经营科学主题咖啡馆}{利用软件开发收入，在学校附近创办了Quantum Coffee——一个鼓励学生跨学科探索和讨论科学话题的协作空间。}
+\resumeSubItem{UNICEF慈善项目}{自2019年起，将个人全部收入的10\%捐赠给儿童慈善机构。}
+\resumeItemListEnd
+
+\end{document}
