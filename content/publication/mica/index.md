@@ -1,5 +1,5 @@
 ---
-title: "MICA: An Efficient Compiler for Mesh-Based AI Accelerators"
+title: "MICA: An End-to-End Compiler Stack for Mesh Accelerators"
 authors:
 - Yeqi Huang
 - Congjie He
