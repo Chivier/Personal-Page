@@ -2,9 +2,10 @@
 set -euo pipefail
 
 # Smart deploy script:
-#   1. Commit all source changes to main (codex-generated message)
-#   2. Push main to remote
-#   3. Build site and push dist/ to gh-pages branch
+#   1. Compile CV (xelatex) so PDFs are up-to-date
+#   2. Commit all source changes to main (codex-generated message)
+#   3. Push main to remote
+#   4. Build site (generator.py) and push dist/ to gh-pages
 #
 # Usage: ./deploy.sh [commit message]
 #
@@ -16,7 +17,23 @@ BUILD_DIR="dist"
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$REPO_ROOT"
 
-# ── Step 1: Commit source changes to main ──
+# ── Step 1: Compile CV ──
+
+if command -v xelatex &>/dev/null; then
+    echo "==> Compiling CV..."
+    CV_DIR="CV-Overleaf"
+    for tex in main.tex main_zh.tex; do
+        if [ -f "$CV_DIR/$tex" ]; then
+            echo "    Compiling $tex..."
+            (cd "$CV_DIR" && xelatex -interaction=nonstopmode "$tex" >/dev/null 2>&1) || \
+                echo "    Warning: $tex compilation failed"
+        fi
+    done
+else
+    echo "==> Skipping CV compilation (xelatex not found)"
+fi
+
+# ── Step 2: Commit source changes (including fresh CV PDFs) ──
 
 echo "==> Checking for uncommitted changes..."
 git add -A
@@ -25,10 +42,8 @@ if git diff --cached --quiet; then
     echo "    No changes to commit."
 else
     if [ -n "${1:-}" ]; then
-        # Use user-provided message
         COMMIT_MSG="$1"
     elif command -v codex &>/dev/null; then
-        # Use codex-spark to generate commit message (MCP disabled for speed)
         echo "    Generating commit message with codex..."
         CODEX_OUT=$(mktemp)
         git diff --cached --stat | \
@@ -47,13 +62,13 @@ else
     echo "    Committed: $COMMIT_MSG"
 fi
 
-# ── Step 2: Push main to remote ──
+# ── Step 3: Push main to remote ──
 
 CURRENT_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo "detached")
 echo "==> Pushing $CURRENT_BRANCH to origin..."
 git push origin "$CURRENT_BRANCH"
 
-# ── Step 3: Build site ──
+# ── Step 4: Build site ──
 
 echo "==> Building site..."
 python generator.py
@@ -63,7 +78,7 @@ if [ ! -d "$BUILD_DIR" ]; then
     exit 1
 fi
 
-# ── Step 4: Deploy to gh-pages ──
+# ── Step 5: Deploy to gh-pages ──
 
 echo "==> Deploying to $DEPLOY_BRANCH..."
 
@@ -73,7 +88,6 @@ cp -r "$BUILD_DIR"/. "$TMPDIR"/
 # Clean up any leftover worktree
 git worktree remove /tmp/_deploy_worktree 2>/dev/null || rm -rf /tmp/_deploy_worktree
 
-# Always reset gh-pages to match remote before deploying
 if git ls-remote --exit-code --heads origin "$DEPLOY_BRANCH" >/dev/null 2>&1; then
     git fetch origin "$DEPLOY_BRANCH"
     git worktree add /tmp/_deploy_worktree "$DEPLOY_BRANCH" 2>/dev/null || {
@@ -82,7 +96,6 @@ if git ls-remote --exit-code --heads origin "$DEPLOY_BRANCH" >/dev/null 2>&1; th
         git checkout -B "$DEPLOY_BRANCH" origin/"$DEPLOY_BRANCH"
     }
     cd /tmp/_deploy_worktree
-    # Ensure local gh-pages matches remote to avoid non-fast-forward errors
     git reset --hard origin/"$DEPLOY_BRANCH" 2>/dev/null || true
 else
     git worktree add --detach /tmp/_deploy_worktree 2>/dev/null || true
