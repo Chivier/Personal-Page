@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Smart deploy script:
-#   1. Commit all source changes to main (auto-generated message)
+#   1. Commit all source changes to main (codex-generated message)
 #   2. Push main to remote
 #   3. Build site and push dist/ to gh-pages branch
 #
@@ -27,19 +27,18 @@ else
     if [ -n "${1:-}" ]; then
         # Use user-provided message
         COMMIT_MSG="$1"
-    elif [ -n "${OPENROUTER_API_KEY:-}" ]; then
-        # Use OpenRouter + Haiku to generate commit message from staged diff
-        echo "    Generating commit message with LLM..."
-        DIFF_STAT=$(git diff --cached --stat)
-        COMMIT_MSG=$(curl -s "https://openrouter.ai/api/v1/chat/completions" \
-            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
-            -H "Content-Type: application/json" \
-            -d "$(jq -n --arg diff "$DIFF_STAT" '{
-                model: "anthropic/claude-3.5-haiku",
-                max_tokens: 60,
-                messages: [{role: "user", content: ("Write a concise git commit message (one line, max 72 chars) for these changes. Output ONLY the message.\n\n" + $diff)}]
-            }')" 2>/dev/null | jq -r '.choices[0].message.content // empty' 2>/dev/null | head -1 | tr -d '"')
-        # Fallback if codex fails or returns empty
+    elif command -v codex &>/dev/null; then
+        # Use codex-spark to generate commit message (MCP disabled for speed)
+        echo "    Generating commit message with codex..."
+        CODEX_OUT=$(mktemp)
+        git diff --cached --stat | \
+            (cd /tmp && codex exec -m codex-spark \
+                --skip-git-repo-check --ephemeral -s read-only \
+                -o "$CODEX_OUT" \
+                "Write ONE git commit message line, max 72 chars. No quotes. Just the message." \
+                2>/dev/null) || true
+        COMMIT_MSG=$(head -1 "$CODEX_OUT" 2>/dev/null | tr -d '"')
+        rm -f "$CODEX_OUT"
         COMMIT_MSG="${COMMIT_MSG:-push @ $(date '+%Y-%m-%d')}"
     else
         COMMIT_MSG="push @ $(date '+%Y-%m-%d')"
@@ -74,6 +73,7 @@ cp -r "$BUILD_DIR"/. "$TMPDIR"/
 # Clean up any leftover worktree
 git worktree remove /tmp/_deploy_worktree 2>/dev/null || rm -rf /tmp/_deploy_worktree
 
+# Always reset gh-pages to match remote before deploying
 if git ls-remote --exit-code --heads origin "$DEPLOY_BRANCH" >/dev/null 2>&1; then
     git fetch origin "$DEPLOY_BRANCH"
     git worktree add /tmp/_deploy_worktree "$DEPLOY_BRANCH" 2>/dev/null || {
@@ -82,6 +82,8 @@ if git ls-remote --exit-code --heads origin "$DEPLOY_BRANCH" >/dev/null 2>&1; th
         git checkout -B "$DEPLOY_BRANCH" origin/"$DEPLOY_BRANCH"
     }
     cd /tmp/_deploy_worktree
+    # Ensure local gh-pages matches remote to avoid non-fast-forward errors
+    git reset --hard origin/"$DEPLOY_BRANCH" 2>/dev/null || true
 else
     git worktree add --detach /tmp/_deploy_worktree 2>/dev/null || true
     cd /tmp/_deploy_worktree
