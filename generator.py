@@ -754,6 +754,12 @@ class PersonalHomepageGenerator:
         print("Copying assets...")
         self.copy_assets()
 
+        # Copy CNAME file for GitHub Pages custom domain
+        cname_src = Path("CNAME")
+        if cname_src.exists():
+            shutil.copy(cname_src, self.output_dir / "CNAME")
+            print("CNAME copied to dist/")
+
         # Wait for CV compilation and copy result
         self.collect_cv(cv_proc)
 
