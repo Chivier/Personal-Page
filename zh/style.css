@@ -415,9 +415,47 @@ h3 {
 }
 
 .pub-venue {
-    font-size: 0.95rem;
     margin-bottom: 0.75rem;
-    font-style: italic;
+}
+
+.venue-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.venue-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Accepted / published — green */
+.venue-pill--accepted {
+    background-color: #e6f6ec;
+    color: #1a7f37;
+}
+
+.venue-pill--accepted .venue-dot {
+    background-color: #1a7f37;
+}
+
+/* Submitted / under review — yellow */
+.venue-pill--submitted {
+    background-color: #fdf3d3;
+    color: #9a6700;
+}
+
+.venue-pill--submitted .venue-dot {
+    background-color: #d4a017;
 }
 
 .pub-links {
