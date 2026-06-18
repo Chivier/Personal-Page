@@ -6,6 +6,7 @@ Supports bilingual output (English + Chinese)
 """
 
 import os
+import re
 import json
 import yaml
 import markdown
@@ -262,6 +263,38 @@ class PersonalHomepageGenerator:
             '''
         return education_html
 
+    def venue_pill(self, pub: dict) -> str:
+        """Render the publication venue as a colored pill tag.
+
+        Green = accepted/published, yellow = submitted/under review.
+        Shows the short venue name only (e.g. "SOSP 2026"), never the full title.
+        Status comes from the explicit `publication_status` field, falling back
+        to inference from the venue text.
+        """
+        short = (pub.get('publication_short') or pub.get('publication') or '').strip()
+        # Strip any trailing status annotation, e.g. "OSDI 2026 (Under Review)".
+        label = re.sub(r'\s*\((?:under\s*review|submitted|submitting|in\s*review)\)\s*$',
+                       '', short, flags=re.IGNORECASE).strip()
+        if not label:
+            return ''
+
+        status = (pub.get('publication_status') or '').strip().lower()
+        if status in ('accepted', 'published', 'camera-ready', 'camera_ready'):
+            state = 'accepted'
+        elif status in ('submitted', 'under_review', 'under review', 'in_review', 'in review'):
+            state = 'submitted'
+        else:
+            # Infer from the venue text when no explicit status is given.
+            full = (pub.get('publication') or '').lower()
+            if full.startswith('submitted') or 'under review' in short.lower() \
+                    or 'under review' in full or 'submitting' in full:
+                state = 'submitted'
+            else:
+                state = 'accepted'
+
+        return (f'<span class="venue-pill venue-pill--{state}">'
+                f'<span class="venue-dot"></span>{label}</span>')
+
     def format_publication_item(self, pub: dict) -> str:
         """Format a single publication item"""
         authors = ', '.join(pub.get('authors', []))
@@ -291,7 +324,7 @@ class PersonalHomepageGenerator:
             <div class="pub-content">
                 <h4 class="pub-title">{pub.get('title', '')}</h4>
                 <p class="pub-authors">{authors}</p>
-                <p class="pub-venue">{pub.get('publication', '')} {pub.get('publication_short', '')}</p>
+                <p class="pub-venue">{self.venue_pill(pub)}</p>
                 <div class="pub-links">{links_html}</div>
             </div>
             {f'<div class="pub-year">{year}</div>' if year else ''}
@@ -671,7 +704,11 @@ class PersonalHomepageGenerator:
             self.copy_assets(output_dir)
 
     def compile_cv(self) -> list[subprocess.Popen]:
-        """Start xelatex compilation of CVs in the background. Returns process handles."""
+        """Start xelatex compilation of CVs in the background. Returns process handles.
+        Skipped if SKIP_CV_COMPILE env var is set (e.g. when deploy.sh already compiled)."""
+        if os.environ.get("SKIP_CV_COMPILE"):
+            print("Skipping CV compilation (SKIP_CV_COMPILE is set)")
+            return []
         cv_dir = Path("CV-Overleaf")
         procs = []
         for tex_name in ["main.tex", "main_zh.tex"]:

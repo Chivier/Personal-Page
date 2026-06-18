@@ -21,8 +21,9 @@ publishDate: "2026-01-14T00:00:00Z"
 publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
-publication: "Submitted to 18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 26)"
-publication_short: "OSDI 2026 (Under Review)"
+publication: "Submitted to ACM Symposium on Operating Systems Principles (SOSP 2026)"
+publication_short: "SOSP 2026"
+publication_status: "under_review"
 
 abstract: "AI accelerators built on mesh architectures are emerging as a scalable platform for large AI models, vector search, scientific computing, and many other performance-critical workloads. Yet their 2D mesh design introduces strict locality constraints and a vast spatial-temporal scheduling space that existing GPU and distributed compilers cannot handle. We present MICA, the first end-to-end compiler stack for mesh accelerators. MICA introduces MeshIR, a new intermediate representation that makes locality and placement explicit through region-aware tensors and kernels, and it provides a novel search framework capable of efficiently exploring temporal-spatial schedules across millions of cores. On real Cerebras and Tenstorrent accelerators, MICA delivers 3.6x performance improvements over state-of-the-art compilers and even achieves 1.4x of expert hand-tuned performance. MICA reduces challenging wafer-scale schedule search from weeks to hours, enabling easy development of various applications that run 100-200x faster than on GPUs."
 

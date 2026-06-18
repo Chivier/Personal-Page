@@ -71,7 +71,7 @@ git push origin "$CURRENT_BRANCH"
 # ── Step 4: Build site ──
 
 echo "==> Building site..."
-python generator.py
+SKIP_CV_COMPILE=1 python generator.py
 
 if [ ! -d "$BUILD_DIR" ]; then
     echo "Error: $BUILD_DIR not found. Build failed?"

@@ -1,5 +1,5 @@
 ---
-title: "SwarmX: A Scheduler Agent Framework for Large Agentic Workflow Clusters"
+title: "Swarmpilot: A Scheduler Agent Framework for Large Agentic Workflow Clusters"
 authors:
 - Yeqi Huang
 - Yanwei Ye
@@ -22,13 +22,14 @@ publishDate: "2026-01-14T00:00:00Z"
 publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
-publication: "Submitted to 18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 26)"
-publication_short: "OSDI 2026 (Under Review)"
+publication: "Submitted to European Conference on Computer Systems (EuroSys 2026)"
+publication_short: "EuroSys 2026"
+publication_status: "under_review"
 
-abstract: "Scaling agentic workflows across clusters with tens of thousands of GPUs exposes two system requirements absent in conventional schedulers: accurately predicting complex, evolving workflow execution-time variation, and providing unified, programmable support for adopting AI across scheduling scenarios. Existing systems lack the abstractions and mechanisms needed to satisfy these requirements, leading to suboptimal efficiency and limited scalability. We present SwarmX, the first scheduler agent framework that formulates cluster scheduling as an agentic intelligence problem. Each scheduler component integrates a specialized neural predictor, a maintained memory, a tool abstraction for controlled actions, and a coordinator implementing scheduling objectives. We build practical scheduler agents using this framework and enable them to collaborate via message-based coordination to optimize end-to-end workflow performance. Large-scale production and testbed experiments (millions of CPUs and nearly a thousand GPUs) both show that SwarmX significantly outperforms state-of-the-art systems across numerous critical workflow applications."
+abstract: "Scaling agentic workflows across clusters with tens of thousands of GPUs exposes two system requirements absent in conventional schedulers: accurately predicting complex, evolving workflow execution-time variation, and providing unified, programmable support for adopting AI across scheduling scenarios. Existing systems lack the abstractions and mechanisms needed to satisfy these requirements, leading to suboptimal efficiency and limited scalability. We present Swarmpilot, the first scheduler agent framework that formulates cluster scheduling as an agentic intelligence problem. Each scheduler component integrates a specialized neural predictor, a maintained memory, a tool abstraction for controlled actions, and a coordinator implementing scheduling objectives. We build practical scheduler agents using this framework and enable them to collaborate via message-based coordination to optimize end-to-end workflow performance. Large-scale production and testbed experiments (millions of CPUs and nearly a thousand GPUs) both show that Swarmpilot significantly outperforms state-of-the-art systems across numerous critical workflow applications."
 
 # Summary. An optional shortened abstract.
-summary: "SwarmX is the first scheduler agent framework that formulates cluster scheduling as an agentic intelligence problem. With specialized neural predictors, memory components, and message-based coordination, SwarmX achieves up to 50% P99 latency improvement and doubles throughput while managing workloads spanning millions of CPU cores and nearly a thousand GPUs."
+summary: "Swarmpilot is the first scheduler agent framework that formulates cluster scheduling as an agentic intelligence problem. With specialized neural predictors, memory components, and message-based coordination, Swarmpilot achieves up to 50% P99 latency improvement and doubles throughput while managing workloads spanning millions of CPU cores and nearly a thousand GPUs."
 
 tags:
 - Cluster Scheduling
@@ -52,7 +53,7 @@ url_video: ''
 
 # Featured image
 image:
-  caption: 'SwarmX Scheduler Agent Architecture'
+  caption: 'Swarmpilot Scheduler Agent Architecture'
   focal_point: "Smart"
   preview_only: false
 
@@ -63,7 +64,7 @@ slides: ""
 
 ## Key Contributions
 
-**SwarmX** introduces the first scheduler agent framework designed for large-scale agentic workflow clusters:
+**Swarmpilot** introduces the first scheduler agent framework designed for large-scale agentic workflow clusters:
 
 ### 1. Scheduler Agent Architecture
 Each scheduling component is expressed as an agent consisting of:
@@ -103,7 +104,7 @@ Each scheduling component is expressed as an agent consisting of:
 
 ## Technical Innovation
 
-SwarmX addresses critical challenges in agentic workflow scheduling:
+Swarmpilot addresses critical challenges in agentic workflow scheduling:
 
 - **Execution-Time Prediction**: Accurately predicts complex, evolving workflow patterns
 - **AI-Native Scheduling**: Unified, programmable AI support across scenarios
@@ -111,14 +112,14 @@ SwarmX addresses critical challenges in agentic workflow scheduling:
 
 ## Deployment and Impact
 
-SwarmX has been:
+Swarmpilot has been:
 - **Developed Over Two Years**: Mature, battle-tested system
 - **Deployed in Production**: Managing tens of thousands of servers
 - **Planned Open-Source Release**: Upon acceptance, enabling community participation
 
 ## Applications
 
-SwarmX enables:
+Swarmpilot enables:
 - **Large Agentic Workflows**: Complex multi-agent workflow orchestration
 - **GPU Cluster Management**: Efficient heterogeneous resource utilization
 - **Scalable AI Services**: Production-ready AI workflow deployment
