@@ -292,6 +292,9 @@ class PersonalHomepageGenerator:
             else:
                 state = 'accepted'
 
+        if state == 'submitted':
+            label = f'{label} · Under Review'
+
         return (f'<span class="venue-pill venue-pill--{state}">'
                 f'<span class="venue-dot"></span>{label}</span>')
 
