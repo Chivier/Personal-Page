@@ -10,6 +10,7 @@
 \usepackage{hyperref}
 \usepackage{ctex}
 \usepackage{fancyhdr}
+\usepackage{needspace}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -95,23 +96,25 @@
 %-----------PROJECTS-----------------
 \section{Publications}
 \resumeSubHeadingListStart
-\item [1] \textbf{Yeqi Huang}, Congjie He, Haocheng Xiao, et al. "MICA: An End-to-End Compiler Stack for Mesh Accelerators." \textit{Under Review}, OSDI 2026.
+\item [1] \textbf{Yeqi Huang}, Congjie He, Haocheng Xiao, et al. "Wavel: A Fast and Efficient Compilation System for Wafer-Scale Accelerators." \textit{Accepted to the ACM Symposium on Operating Systems Principles (SOSP)}, 2026.
 \vspace{-5pt}
-\item [2] \textbf{Yeqi Huang}, Yanwei Ye, Guomin Chen, et al. "SwarmX: Agentic Cluster Scheduling Framework." \textit{Under Review}, OSDI 2026.
+\item [2] Congjie He, Le Xu, Zhan Lu, \textbf{Yeqi Huang}, et al. "MeshRT: Compile-Time Governed Wafer-Scale Runtime for Low-Latency High-Throughput Inference." \textit{Accepted to the ACM Symposium on Operating Systems Principles (SOSP)}, 2026.
 \vspace{-5pt}
-\item [3] \textbf{Yeqi Huang}, Yue Chen, Yanwei Ye, et al. "BioVLM: Evidence-Enriched Data Synthesis from Biomedical Papers." \textit{Under Review}, ACL 2025 System Demonstration.
+\item [3] \textbf{Yeqi Huang}, Yanwei Ye, Guomin Chen, et al. "SwarmX: Agentic Cluster Scheduling Framework." \textit{Under Review}, OSDI 2026.
 \vspace{-5pt}
-\item [4] Chuanming Zha, Jiamin Zheng, \textbf{Yeqi Huang}, et al. "LLM-Monitor: Efficient Privacy Violation Monitoring for LLMs." \textit{Under Review}, ACL 2025 System Demonstration.
+\item [4] \textbf{Yeqi Huang}, Yue Chen, Yanwei Ye, et al. "BioVLM: Evidence-Enriched Data Synthesis from Biomedical Papers." \textit{Under Review}, ACL 2025 System Demonstration.
 \vspace{-5pt}
-\item [5] Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*}, Liang Cheng, et al. "ContextPilot: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse." \textit{MLSys}, 2026. (\textsuperscript{*}Equal Contribution)
+\item [5] Chuanming Zha, Jiamin Zheng, \textbf{Yeqi Huang}, et al. "LLM-Monitor: Efficient Privacy Violation Monitoring for LLMs."
 \vspace{-5pt}
-\item [6] Congjie He, \textbf{Yeqi Huang}, Pei Mu, et al. "WaferLLM: Large Language Model Inference at Wafer Scale." \textit{Under Review}, OSDI 2025.
+\item [6] Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*}, Liang Cheng, et al. "ContextPilot: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse." \textit{MLSys}, 2026. (\textsuperscript{*}Equal Contribution)
 \vspace{-5pt}
-\item [7] Yao Fu\textsuperscript{*}, Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*}, et al. "MoE-CAP: Cost-Accuracy-Performance Benchmarking for Mixture-of-Experts Systems." \textit{NeurIPS}, 2025. (\textsuperscript{*}Equal Contribution)
+\item [7] Congjie He, \textbf{Yeqi Huang}, Pei Mu, et al. "WaferLLM: Large Language Model Inference at Wafer Scale." \textit{Under Review}, OSDI 2025.
 \vspace{-5pt}
-\item [8] Yao Fu, Leyang Xue, \textbf{Yeqi Huang}, et al. "ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models." In \textit{18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)}, 2024.
+\item [8] Yao Fu\textsuperscript{*}, Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*}, et al. "MoE-CAP: Cost-Accuracy-Performance Benchmarking for Mixture-of-Experts Systems." \textit{NeurIPS}, 2025. (\textsuperscript{*}Equal Contribution)
 \vspace{-5pt}
-\item [9] Xiao-Long Chen, Lin-Feng Wang, \textbf{Yeqi Huang}, et al. "Symplectic structure-preserving particle-in-cell whole-volume simulation of tokamak plasmas." In \textit{SC21: International Conference for High Performance Computing, Networking, Storage and Analysis}, 2021.
+\item [9] Yao Fu, Leyang Xue, \textbf{Yeqi Huang}, et al. "ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models." In \textit{18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)}, 2024.
+\vspace{-5pt}
+\item [10] Xiao-Long Chen, Lin-Feng Wang, \textbf{Yeqi Huang}, et al. "Symplectic structure-preserving particle-in-cell whole-volume simulation of tokamak plasmas." In \textit{SC21: International Conference for High Performance Computing, Networking, Storage and Analysis}, 2021.
 \resumeSubHeadingListEnd
 
 
@@ -141,12 +144,21 @@
 
 
 
-\resumeSubItem{MICA (submitted to OSDI 2026)}{
+\Needspace{8\baselineskip}
+\resumeSubItem{Wavel (SOSP 2026)}{
 \begin{description}[font=$\circ$]\vspace{-8pt}
-\item Developed the first end-to-end compiler stack for mesh accelerators (Cerebras, Tenstorrent) with a novel MeshIR.\vspace{-3pt}
-\item Implemented a search framework reducing schedule search from weeks to hours for millions of cores.\vspace{-3pt}
-\item Achieved 3.6$\times$ performance improvements over state-of-the-art compilers and 1.4$\times$ over expert hand-tuned codes.\vspace{-3pt}
-\item Enabled applications to run 100--200$\times$ faster than on GPUs by efficiently exploring temporal-spatial schedules.\vspace{-3pt}
+\item Designed a wafer-scale compilation system using MeshIR and the locality-preserving CUT and TUNE primitives.\vspace{-3pt}
+\item Achieved up to 3.6$\times$ speedup over state-of-the-art compilers, 1.3--1.4$\times$ higher throughput than WaferLLM, and up to 2.97$\times$ over automatic baselines.\vspace{-3pt}
+\item Matched or surpassed expert schedules on Cerebras WSE-3 and Tenstorrent Blackhole while reducing search from hours or weeks to minutes or seconds.\vspace{-3pt}
+\end{description}
+}
+
+\Needspace{8\baselineskip}
+\resumeSubItem{MeshRT (SOSP 2026)}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item Developed the first wafer-scale runtime to achieve both ultra-low latency and high throughput for LLM inference.\vspace{-3pt}
+\item Compiled dynamic inference events into per-core schedules for decentralized execution with low runtime overhead.\vspace{-3pt}
+\item Improved throughput by up to 30--68$\times$, with 6--8$\times$ lower latency and 10--36$\times$ higher decode energy efficiency than H200 GPU inference engines in the low-latency regime.\vspace{-3pt}
 \end{description}
 }
 
@@ -167,7 +179,7 @@
 \end{description}
 }
 
-\resumeSubItem{LLM-Monitor (submitted to ACL 2025 System Demonstration)}{
+\resumeSubItem{LLM-Monitor}{
 \begin{description}[font=$\circ$]\vspace{-8pt}
 \item Designed a low-cost, high-quality, evolvable privacy violation monitoring system for LLMs.\vspace{-3pt}
 \item Organized and compiled monitoring requirements into optimized representations executable by local medium-scale models.\vspace{-3pt}

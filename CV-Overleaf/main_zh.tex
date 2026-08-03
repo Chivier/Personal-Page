@@ -9,6 +9,7 @@
 \usepackage{hyperref}
 \usepackage{ctex}
 \usepackage{fancyhdr}
+\usepackage{needspace}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -94,23 +95,25 @@
 %-----------PUBLICATIONS-----------------
 \section{学术论文}
 \resumeSubHeadingListStart
-\item [1] \textbf{Yeqi Huang}, Congjie He, Haocheng Xiao 等. ``MICA: An End-to-End Compiler Stack for Mesh Accelerators.'' \textit{审稿中}, OSDI 2026.
+\item [1] \textbf{Yeqi Huang}, Congjie He, Haocheng Xiao 等. ``Wavel: A Fast and Efficient Compilation System for Wafer-Scale Accelerators.'' \textit{已被ACM操作系统原理研讨会（SOSP）录用}, 2026.
 \vspace{-5pt}
-\item [2] \textbf{Yeqi Huang}, Yanwei Ye, Guomin Chen 等. ``SwarmX: Agentic Cluster Scheduling Framework.'' \textit{审稿中}, OSDI 2026.
+\item [2] Congjie He, Le Xu, Zhan Lu, \textbf{Yeqi Huang} 等. ``MeshRT: Compile-Time Governed Wafer-Scale Runtime for Low-Latency High-Throughput Inference.'' \textit{已被ACM操作系统原理研讨会（SOSP）录用}, 2026.
 \vspace{-5pt}
-\item [3] \textbf{Yeqi Huang}, Yue Chen, Yanwei Ye 等. ``BioVLM: Evidence-Enriched Data Synthesis from Biomedical Papers.'' \textit{审稿中}, ACL 2025 系统演示.
+\item [3] \textbf{Yeqi Huang}, Yanwei Ye, Guomin Chen 等. ``SwarmX: Agentic Cluster Scheduling Framework.'' \textit{审稿中}, OSDI 2026.
 \vspace{-5pt}
-\item [4] Chuanming Zha, Jiamin Zheng, \textbf{Yeqi Huang} 等. ``LLM-Monitor: Efficient Privacy Violation Monitoring for LLMs.'' \textit{审稿中}, ACL 2025 系统演示.
+\item [4] \textbf{Yeqi Huang}, Yue Chen, Yanwei Ye 等. ``BioVLM: Evidence-Enriched Data Synthesis from Biomedical Papers.'' \textit{审稿中}, ACL 2025 系统演示.
 \vspace{-5pt}
-\item [5] Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*}, Liang Cheng 等. ``ContextPilot: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse.'' \textit{MLSys}, 2026. (\textsuperscript{*}共同一作)
+\item [5] Chuanming Zha, Jiamin Zheng, \textbf{Yeqi Huang} 等. ``LLM-Monitor: Efficient Privacy Violation Monitoring for LLMs.''
 \vspace{-5pt}
-\item [6] Congjie He, \textbf{Yeqi Huang}, Pei Mu 等. ``WaferLLM: Large Language Model Inference at Wafer Scale.'' \textit{审稿中}, OSDI 2025.
+\item [6] Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*}, Liang Cheng 等. ``ContextPilot: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse.'' \textit{MLSys}, 2026. (\textsuperscript{*}共同一作)
 \vspace{-5pt}
-\item [7] Yao Fu\textsuperscript{*}, Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*} 等. ``MoE-CAP: Cost-Accuracy-Performance Benchmarking for Mixture-of-Experts Systems.'' \textit{NeurIPS}, 2025. (\textsuperscript{*}共同一作)
+\item [7] Congjie He, \textbf{Yeqi Huang}, Pei Mu 等. ``WaferLLM: Large Language Model Inference at Wafer Scale.'' \textit{审稿中}, OSDI 2025.
 \vspace{-5pt}
-\item [8] Yao Fu, Leyang Xue, \textbf{Yeqi Huang} 等. ``ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models.'' 发表于 \textit{第18届 USENIX 操作系统设计与实现研讨会 (OSDI 24)}, 2024.
+\item [8] Yao Fu\textsuperscript{*}, Yinsicheng Jiang\textsuperscript{*}, \textbf{Yeqi Huang}\textsuperscript{*} 等. ``MoE-CAP: Cost-Accuracy-Performance Benchmarking for Mixture-of-Experts Systems.'' \textit{NeurIPS}, 2025. (\textsuperscript{*}共同一作)
 \vspace{-5pt}
-\item [9] Xiao-Long Chen, Lin-Feng Wang, \textbf{Yeqi Huang} 等. ``Symplectic structure-preserving particle-in-cell whole-volume simulation of tokamak plasmas.'' 发表于 \textit{SC21: 国际高性能计算、网络、存储与分析会议}, 2021.
+\item [9] Yao Fu, Leyang Xue, \textbf{Yeqi Huang} 等. ``ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models.'' 发表于 \textit{第18届 USENIX 操作系统设计与实现研讨会 (OSDI 24)}, 2024.
+\vspace{-5pt}
+\item [10] Xiao-Long Chen, Lin-Feng Wang, \textbf{Yeqi Huang} 等. ``Symplectic structure-preserving particle-in-cell whole-volume simulation of tokamak plasmas.'' 发表于 \textit{SC21: 国际高性能计算、网络、存储与分析会议}, 2021.
 \resumeSubHeadingListEnd
 
 
@@ -136,12 +139,21 @@
 }
 
 
-\resumeSubItem{MICA（已投稿OSDI 2026）}{
+\Needspace{8\baselineskip}
+\resumeSubItem{Wavel（SOSP 2026）}{
 \begin{description}[font=$\circ$]\vspace{-8pt}
-\item 开发了首个面向网格加速器（Cerebras、Tenstorrent）的端到端编译器栈，提出全新的MeshIR。\vspace{-3pt}
-\item 实现了搜索框架，将百万核级调度搜索时间从数周缩短至数小时。\vspace{-3pt}
-\item 相比最先进编译器实现3.6倍性能提升，相比专家手工调优代码实现1.4倍提升。\vspace{-3pt}
-\item 通过高效探索时空调度，使应用程序运行速度比GPU快100--200倍。\vspace{-3pt}
+\item 设计了使用MeshIR及局部性保持原语CUT和TUNE的晶圆级编译系统。\vspace{-3pt}
+\item 相比最先进编译器实现最高3.6倍加速，相比WaferLLM吞吐量提升1.3--1.4倍，相比自动基线最高提升2.97倍。\vspace{-3pt}
+\item 在Cerebras WSE-3和Tenstorrent Blackhole上达到或超过专家调度，并将搜索时间从数小时或数周缩短至数分钟或数秒。\vspace{-3pt}
+\end{description}
+}
+
+\Needspace{8\baselineskip}
+\resumeSubItem{MeshRT（SOSP 2026）}{
+\begin{description}[font=$\circ$]\vspace{-8pt}
+\item 开发了首个同时实现超低延迟和高吞吐量的晶圆级LLM推理运行时。\vspace{-3pt}
+\item 将动态推理事件编译为逐核调度，实现低运行时开销的去中心化执行。\vspace{-3pt}
+\item 吞吐量提升最高30--68倍；在低延迟场景下，相比H200 GPU推理引擎实现6--8倍更低延迟和10--36倍更高解码能效。\vspace{-3pt}
 \end{description}
 }
 
@@ -162,7 +174,7 @@
 \end{description}
 }
 
-\resumeSubItem{LLM-Monitor（已投稿ACL 2025系统演示）}{
+\resumeSubItem{LLM-Monitor}{
 \begin{description}[font=$\circ$]\vspace{-8pt}
 \item 设计了面向LLM的低成本、高质量、可进化的隐私违规监控系统。\vspace{-3pt}
 \item 将监控需求组织编译为本地中等规模模型可执行的优化表示。\vspace{-3pt}

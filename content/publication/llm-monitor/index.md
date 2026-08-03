@@ -12,8 +12,8 @@ publishDate: "2025-03-17T00:00:00Z"
 
 publication_types: ["paper-conference"]
 
-publication: "Submitted to ACL 2025 System Demonstration"
-publication_short: "ACL 2025 Demo (Under Review)"
+publication: ""
+publication_short: ""
 
 abstract: "We present LLM-Monitor, a low-cost, high-quality, evolvable privacy violation monitoring system for LLMs. LLM-Monitor organizes and compiles monitoring requirements into optimized representations executable by local medium-scale models. Using a specialized Qwen3-8B-based model, LLM-Monitor achieves 15x faster monitoring than GPT-5.2 while matching its monitoring quality."
 
