@@ -6,16 +6,16 @@ authors:
 - Yanwei Ye
 - Guanhao Su
 - Luo Mai
-date: "2026-06-01T00:00:00Z"
-doi: "https://arxiv.org/abs/2606.00902"
+date: "2026-07-02T00:00:00Z"
+doi: "https://doi.org/10.18653/v1/2026.acl-demo.73"
 
 publishDate: "2026-06-01T00:00:00Z"
 
 publication_types: ["paper-conference"]
 
-publication: "Annual Meeting of the Association for Computational Linguistics (ACL 2026), System Demonstrations"
+publication: "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)"
 publication_short: "ACL 2026 Demo"
-publication_status: "accepted"
+publication_status: "published"
 
 abstract: "We present Ryze, a fully automated system that converts biomedical papers into training datasets and specialized vision-language models. Unlike prior pipelines that discard contextual information, Ryze preserves complete supporting evidence — the visual element, its caption, the extracted structure, and the referring paragraphs — when synthesizing question-answer data. A chart/table-aware extraction pipeline reduces OCR errors through multi-stage processing, and a progress-gated training procedure combines supervised fine-tuning with reinforcement learning while automatically detecting saturation. Starting from Qwen3-VL-8B, the resulting BioVLM-8B model achieves 48.0% accuracy on LAB-Bench, surpassing GPT-5.2 by 3.8 percentage points while costing under $200 to train, and outperforms human-curated datasets at equal token budgets."
 
@@ -29,13 +29,15 @@ tags:
 featured: true
 
 links:
+- name: Proceedings
+  url: https://aclanthology.org/2026.acl-demo.73/
 - name: ArXiv
   url: https://arxiv.org/abs/2606.00902
 - name: Demo
   url: https://ryze.12th.day
 - name: Video
   url: https://youtu.be/5L2YShSaIQQ
-url_pdf: 'https://arxiv.org/pdf/2606.00902'
+url_pdf: 'https://aclanthology.org/2026.acl-demo.73.pdf'
 url_code: 'https://github.com/Chivier/Ryze'
 url_dataset: ''
 url_poster: ''

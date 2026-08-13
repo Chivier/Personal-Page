@@ -1,5 +1,5 @@
 ---
-title: "ContextPilot: Efficient Retrieval-Augmented Generation with Accuracy-Preserving Context Reuse"
+title: "ContextPilot: Fast Long-Context Inference via Context Reuse"
 authors:
 - Yinsicheng Jiang
 - Yeqi Huang
@@ -7,8 +7,8 @@ authors:
 - Cheng Deng
 - Xuan Sun
 - Luo Mai
-date: "2025-11-05T00:00:00Z"
-doi: "https://arxiv.org/abs/2511.03475"
+date: "2026-05-18T00:00:00Z"
+doi: ""
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2025-11-05T00:00:00Z"
@@ -19,8 +19,9 @@ publishDate: "2025-11-05T00:00:00Z"
 publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
-publication: "9th Conference on Machine Learning and Systems (MLSys)"
+publication: "Proceedings of Machine Learning and Systems 8 (MLSys 2026)"
 publication_short: "MLSys 2026"
+publication_status: "published"
 
 abstract: "Retrieval-augmented generation (RAG) systems enhance large language models (LLMs) by incorporating external knowledge from retrieval databases. However, these systems face significant computational overhead from retrieving and processing similar or identical contexts across concurrent sessions and multi-turn interactions. This paper introduces ContextPilot, an efficient RAG system that detects overlapping retrieved items across sessions to maximize cache efficiency. ContextPilot employs efficient context indexing, ordering, and de-duplication while maintaining accuracy through lightweight contextual hints. Our comprehensive evaluation shows that ContextPilot achieves 1.5-3X performance improvements for prefill operations compared to existing methods, demonstrating substantial efficiency gains without sacrificing generation quality."
 
@@ -37,10 +38,12 @@ tags:
 featured: true
 
 links:
+- name: Proceedings
+  url: https://proceedings.mlsys.org/paper_files/paper/2026/hash/b0131b6ee02a00b03fc3320176fec8f5-Abstract-Conference.html
 - name: ArXiv
   url: https://arxiv.org/abs/2511.03475
-url_pdf: https://arxiv.org/pdf/2511.03475.pdf
-url_code: ''
+url_pdf: https://proceedings.mlsys.org/paper_files/paper/2026/file/b0131b6ee02a00b03fc3320176fec8f5-Paper-Conference.pdf
+url_code: 'https://github.com/EfficientContext/ContextPilot'
 url_dataset: ''
 url_poster: ''
 url_project: ''

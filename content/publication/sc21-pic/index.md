@@ -14,6 +14,7 @@ publication_types: ["paper-conference"]
 
 publication: "SC21: International Conference for High Performance Computing, Networking, Storage and Analysis"
 publication_short: "SC 2021"
+publication_status: "published"
 
 abstract: "We present a symplectic structure-preserving particle-in-cell method for whole-volume simulation of tokamak plasmas, demonstrated at the International Conference for High Performance Computing, Networking, Storage and Analysis (SC21)."
 

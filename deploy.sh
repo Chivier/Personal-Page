@@ -29,6 +29,9 @@ if command -v xelatex &>/dev/null; then
                 echo "    Warning: $tex compilation failed"
         fi
     done
+    if [ -f "$CV_DIR/main.pdf" ]; then
+        cp "$CV_DIR/main.pdf" content/resume.pdf
+    fi
 else
     echo "==> Skipping CV compilation (xelatex not found)"
 fi

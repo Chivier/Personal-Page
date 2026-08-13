@@ -1,5 +1,5 @@
 ---
-title: "ServerlessLLM: Locality-Enhanced Serverless Inference for Large Language Models"
+title: "ServerlessLLM: Low-Latency Serverless Inference for Large Language Models"
 authors:
 - Yao Fu
 - Leyang Xue
@@ -8,8 +8,8 @@ authors:
 - Dmitrii Ustiugov
 - Yuvraj Patel
 - Luo Mai
-date: "2024-02-27T00:00:00Z"
-doi: "https://doi.org/10.48550/arXiv.2401.14351"
+date: "2024-07-10T00:00:00Z"
+doi: ""
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2024-02-27T00:00:00Z"
@@ -22,7 +22,7 @@ publication_types: ["paper-conference"]
 # Publication name and optional abbreviated publication name.
 publication: "18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)"
 publication_short: "OSDI 2024"
-publication_status: "accepted"
+publication_status: "published"
 
 abstract: "This paper presents ServerlessLLM, a locality-enhanced serverless inference system for Large Language Models (LLMs). ServerlessLLM exploits the substantial capacity and bandwidth of storage and memory devices available on GPU servers, thereby reducing costly remote checkpoint downloads and achieving efficient checkpoint loading. ServerlessLLM achieves this through three main contributions: (i) fast LLM checkpoint loading via a novel loading-optimized checkpoint format design, coupled with an efficient multi-tier checkpoint loading system; (ii) locality-driven LLM inference with live migration, which allows ServerlessLLM to effectively achieve locality-driven server allocation while preserving the low latency of ongoing LLM inference; and (iii) locality-aware server allocation, enabling ServerlessLLM to evaluate the status of each server in a cluster and effectively schedule model startup time to capitalize on local checkpoint placement. Our comprehensive experiments, which include microbenchmarks and real-world traces, show that ServerlessLLM surpasses state-of-the-art systems by 10 - 200X in latency performance when running various LLM inference workloads."
 
@@ -57,4 +57,3 @@ projects:
 
 slides: ""
 ---
-

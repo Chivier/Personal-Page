@@ -1,18 +1,18 @@
 ---
-title: BioVLM
-summary: Evidence-enriched data synthesis pipeline from biomedical papers, training BioVLM-8B that surpasses GPT-5.2 on LAB-Bench.
+title: Ryze
+summary: Evidence-enriched data synthesis from biomedical papers, producing BioVLM-8B and surpassing GPT-5.2 on LAB-Bench.
 tags:
   - LLM
   - Biomedical
   - VLM
-date: "2025-03-01T00:00:00Z"
+date: "2026-07-02T00:00:00Z"
 
 image:
-  caption: BioVLM
+  caption: Ryze
   focal_point: Smart
 ---
 
-## BioVLM
+## Ryze
 
 Automated pipeline transforming biomedical papers into evidence-enriched VLM training data.
 

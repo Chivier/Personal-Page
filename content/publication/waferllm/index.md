@@ -9,7 +9,7 @@ authors:
 - Lingxiao Ma
 - Fan Yang
 - Luo Mai
-date: "2025-07-01T00:00:00Z"
+date: "2025-07-07T00:00:00Z"
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
@@ -21,8 +21,9 @@ publishDate: "2025-01-01T00:00:00Z"
 publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
-publication: "17th USENIX Symposium on Operating Systems Design and Implementation (OSDI 25)"
+publication: "19th USENIX Symposium on Operating Systems Design and Implementation (OSDI 25)"
 publication_short: "OSDI 2025"
+publication_status: "published"
 
 abstract: "Emerging AI accelerators increasingly adopt wafer-scale manufacturing technologies, integrating hundreds of thousands of AI cores in a mesh architecture with large distributed on-chip memory (tens of GB in total) and ultra-high on-chip memory bandwidth (tens of PB/s). However, current LLM inference systems, optimized for shared memory architectures like GPUs, fail to exploit these accelerators fully. We introduce WaferLLM, the first wafer-scale LLM inference system. WaferLLM is guided by a novel PLMR model (pronounced as 'Plummer') that captures the unique hardware characteristics of wafer-scale architectures. Leveraging this model, WaferLLM pioneers wafer-scale LLM parallelism, optimizing the utilization of hundreds of thousands of on-chip cores. It also introduces MeshGEMM and MeshGEMV, the first GEMM and GEMV implementations designed to scale effectively on wafer-scale accelerators. Evaluations show that WaferLLM achieves up to 200× higher accelerator utilization than state-of-the-art methods. Leveraging a wafer-scale accelerator (Cerebras WSE2), WaferLLM delivers GEMV operations 606× faster and 16× more energy-efficient than on an NVIDIA A100 GPU. For full LLM inference, WaferLLM achieves 10-20× speedups over A100 GPU clusters running SGLang and vLLM."
 
@@ -43,7 +44,7 @@ links:
   url: https://www.usenix.org/conference/osdi25/presentation/he
 - name: GitHub
   url: https://github.com/MeshInfra/WaferLLM
-url_pdf: ''
+url_pdf: 'https://www.usenix.org/system/files/osdi25-he.pdf'
 url_code: 'https://github.com/MeshInfra/WaferLLM'
 url_dataset: ''
 url_poster: ''
@@ -121,4 +122,4 @@ WaferLLM is open-sourced at [https://github.com/MeshInfra/WaferLLM](https://gith
 - **Industry adoption**: Practical deployment of wafer-scale systems
 - **Educational use**: Learning about next-generation AI architectures
 
-This work establishes the foundation for the next generation of AI inference systems, designed to exploit the unique advantages of wafer-scale AI accelerators. 
+This work establishes the foundation for the next generation of AI inference systems, designed to exploit the unique advantages of wafer-scale AI accelerators.
