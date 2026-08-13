@@ -99,7 +99,7 @@
 \vspace{-5pt}
 \item [2] Congjie He, Le Xu, Zhan Lu, \textbf{Yeqi Huang} 等. ``MeshRT: Compile-Time Governed Wafer-Scale Runtime for Low-Latency High-Throughput Inference.'' \textit{已被ACM操作系统原理研讨会（SOSP）录用}, 2026.
 \vspace{-5pt}
-\item [3] \textbf{Yeqi Huang}, Yanwei Ye, Guomin Chen 等. ``SwarmX: Agentic Cluster Scheduling Framework.'' \textit{审稿中}, OSDI 2026.
+\item [3] \textbf{Yeqi Huang}, Yanwei Ye, Guomin Chen 等. ``SwarmPilot: A Scheduler Agent Framework for Large Agentic Workflow Clusters.'' \textit{已被欧洲计算机系统会议（EuroSys）录用}, 2026.
 \vspace{-5pt}
 \item [4] \textbf{Yeqi Huang}, Yue Chen, Yanwei Ye 等. ``BioVLM: Evidence-Enriched Data Synthesis from Biomedical Papers.'' \textit{审稿中}, ACL 2025 系统演示.
 \vspace{-5pt}
@@ -120,82 +120,14 @@
 
 \section{项目经历}
 \resumeSubHeadingListStart
-
-\resumeSubItem{GPU上的QED模拟}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-\item 实现了高性能蒙特卡罗模拟，实现1500至5000倍加速。\vspace{-3pt}
-\item 在APS会议上获得诺贝尔奖得主Frank Wilczek的认可。\vspace{-3pt}
-\item 展示了CUDA编程和GPU微架构优化方面的专业技能。\vspace{-3pt}
-\end{description}
-}
-
-\resumeSubItem{AutoReader项目}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-\item 构建了面向最新ArXiv论文的向量数据库，支持每日语义搜索和订阅。（全栈AI应用）\vspace{-3pt}
-\item 实现了\textit{\textbf{比NVIDIA cuVS快60倍的索引速度}}和\textit{\textbf{比Milvus快13倍的检索速度}}。\vspace{-3pt}
-\item 扩展系统支持bioRxiv和PubMed论文，具备专业的生物学功能。\vspace{-3pt}
-\item 生物学版本正在达特茅斯大学进行演示，计划今年向Nature投稿。\vspace{-3pt}
-\end{description}
-}
-
-
-\Needspace{8\baselineskip}
-\resumeSubItem{Wavel（SOSP 2026）}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-\item 设计了使用MeshIR及局部性保持原语CUT和TUNE的晶圆级编译系统。\vspace{-3pt}
-\item 相比最先进编译器实现最高3.6倍加速，相比WaferLLM吞吐量提升1.3--1.4倍，相比自动基线最高提升2.97倍。\vspace{-3pt}
-\item 在Cerebras WSE-3和Tenstorrent Blackhole上达到或超过专家调度，并将搜索时间从数小时或数周缩短至数分钟或数秒。\vspace{-3pt}
-\end{description}
-}
-
-\Needspace{8\baselineskip}
-\resumeSubItem{MeshRT（SOSP 2026）}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-\item 开发了首个同时实现超低延迟和高吞吐量的晶圆级LLM推理运行时。\vspace{-3pt}
-\item 将动态推理事件编译为逐核调度，实现低运行时开销的去中心化执行。\vspace{-3pt}
-\item 吞吐量提升最高30--68倍；在低延迟场景下，相比H200 GPU推理引擎实现6--8倍更低延迟和10--36倍更高解码能效。\vspace{-3pt}
-\end{description}
-}
-
-\resumeSubItem{SwarmX（已投稿OSDI 2026）}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-\item 提出首个将集群调度建模为智能体问题的调度器代理框架。\vspace{-3pt}
-\item 在数万台服务器上进行生产部署，P99延迟降低最高50\%，吞吐量翻倍。\vspace{-3pt}
-\item 设计了带有神经预测器和记忆模块的模块化代理，优化复杂工作流性能。\vspace{-3pt}
-\item 保持与Ray和ComfyUI的兼容性，现有工作流无需修改即可运行。\vspace{-3pt}
-\end{description}
-}
-
-\resumeSubItem{BioVLM（已投稿ACL 2025系统演示）}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-\item 自动化流水线将生物医学论文转化为证据增强的VLM训练数据。\vspace{-3pt}
-\item 在Qwen3-VL-8B上进行渐进式后训练（SFT + RL），以低于200美元成本训练BioVLM-8B。\vspace{-3pt}
-\item 在LAB-Bench上达到48.0\%加权准确率，比基础模型高12.6\%，比GPT-5.2高3.8\%。\vspace{-3pt}
-\end{description}
-}
-
-\resumeSubItem{LLM-Monitor}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-\item 设计了面向LLM的低成本、高质量、可进化的隐私违规监控系统。\vspace{-3pt}
-\item 将监控需求组织编译为本地中等规模模型可执行的优化表示。\vspace{-3pt}
-\item 使用基于Qwen3-8B的专用模型，实现比GPT-5.2高15倍的监控加速。\vspace{-3pt}
-\item 匹配大型公共模型（GPT-5.2）的监控质量，同时显著更快更便宜。\vspace{-3pt}
-\end{description}
-}
-
-\resumeSubItem{AI4Math - Sketchpad项目}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-\item 获得AI for Math基金资助，开发面向形式数学的Sketchpad系统（\href{https://www.renaissancephilanthropy.org/news-and-insights/ai-for-math-fund-announces-18-million-in-grants-to-accelerate-breakthrough-discoveries-in-mathematicsnbsp}{公告链接}）\vspace{-3pt}
-\item 构建自动将数学证明转化为结构化数据的系统，采用基于图的表示。\vspace{-3pt}
-\item 实现将证明分解为单独命题，以实现更精确的自动形式化。\vspace{-3pt}
-\end{description}
-}
-
-\resumeSubItem{更多项目 (\href{https://yeqi-huang.com/}{https://yeqi-huang.com/})}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-\item 更多AI相关项目请访问我的个人主页。\vspace{-3pt}
-\end{description}
-}
+\resumeSubItem{Wavel（SOSP 2026）}{设计MeshIR与局部性保持的晶圆级调度搜索，实现最高3.6倍加速，并将搜索时间从数周缩短至数秒。}
+\resumeSubItem{MeshRT（SOSP 2026）}{将动态LLM推理事件编译为去中心化的逐核调度，在保持超低延迟的同时将吞吐量提升30--68倍。}
+\resumeSubItem{SwarmPilot（EuroSys 2026）}{开发结合神经预测器、记忆、工具与协作机制的调度智能体；生产部署使P99延迟最高降低50\%，吞吐量翻倍。}
+\resumeSubItem{BioVLM}{构建证据增强的生物医学VLM数据流水线，并对Qwen3-VL-8B进行SFT与RL后训练，以低于200美元成本在LAB-Bench上超过GPT-5.2。}
+\resumeSubItem{LLM-Monitor}{将隐私策略编译为高效的本地模型监控器；基于Qwen3-8B的专用模型以15倍速度达到GPT-5.2监控质量。}
+\resumeSubItem{AutoReader}{构建科学文献的图与向量检索系统，索引速度比NVIDIA cuVS快60倍，检索速度比Milvus快13倍。}
+\resumeSubItem{AI4Math - Sketchpad}{构建获AI for Math基金资助的系统，将数学证明转化为结构化图并分解，以支持更精确的自动形式化。}
+\resumeSubItem{GPU上的QED模拟}{实现CUDA蒙特卡罗模拟，获得1500--5000倍加速，并在APS会议上获得诺贝尔奖得主Frank Wilczek认可。}
 
 \resumeSubHeadingListEnd
 \vspace{-10pt}
@@ -264,30 +196,11 @@
 \section{专业技能}
 
 \resumeSubHeadingListStart
-\resumeSubItem{AI相关}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-    \item 深入理解大语言模型，具有将高性能推理和训练框架移植到Apple Silicon、GPU和Cerebras等多种硬件平台的经验。\vspace{-3pt}
-    \item 深入理解向量检索，在多个平台上开发和测试过图数据库和向量数据库。\vspace{-3pt}
-    \item 深入了解多智能体应用，开发了面向此类应用的高效开发组件。\vspace{-3pt}
-\end{description}
-}
-\resumeSubItem{计算机科学相关}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-	\item 精通\textbf{C++、Python、Rust}；熟悉Go、JavaScript和LaTeX\vspace{-3pt}
-	\item 精通\textbf{CUDA、Intel ONEAPI、OpenMP}及相关并行与分布式编程\vspace{-3pt}
-	\item 精通\textbf{LLVM}，经常参与LLVM论坛在线讨论\vspace{-3pt}
-	\item 丰富的Linux使用经验，包括eBPF的使用\vspace{-3pt}
-	\item 丰富的分布式系统和分布式机器学习框架经验\vspace{-3pt}
-	\item 扎实的工程开发经验，掌握各类编译器相关工具和静态分析工具\vspace{-3pt}
-\end{description}
-}
-\resumeSubItem{物理与数学}{
-\begin{description}[font=$\circ$]\vspace{-8pt}
-	\item 精通计算流体力学和分子动力学\vspace{-3pt}
-	\item 扎实的数值方法和线性代数知识\vspace{-3pt}
-	\item 精通量子力学和量子电动力学，了解量子计算\vspace{-3pt}
-\end{description}
-}
+\resumeSubItem{LLM系统与推理}{高性能服务、分布式与晶圆级推理、批处理与MoE动态运行时、模型加载与迁移、KV/上下文复用，以及GPU、Apple Silicon和Cerebras上的跨硬件优化。}
+\resumeSubItem{LLM训练与评测}{证据增强数据合成、SFT与RL后训练、推理时扩展，以及面向LLM/VLM的质量、延迟、吞吐量、能效和成本评测。}
+\resumeSubItem{RAG与智能体}{向量与图检索、上下文索引与去重、多智能体工作流、神经预测、记忆与工具抽象，以及Ray和ComfyUI生产集成。}
+\resumeSubItem{系统与编程}{\textbf{C++、Python、Rust}；CUDA、CuPy、Triton、CuTile、MLIR/LLVM、OpenMP、Linux/eBPF、分布式系统、编译工具与性能工程。}
+\resumeSubItem{物理与数学}{数值方法、线性代数、计算流体力学、分子动力学、量子力学与量子电动力学。}
 \resumeSubHeadingListEnd
 
 
